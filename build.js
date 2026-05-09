@@ -4,10 +4,10 @@ const fs = require("fs");
 const path = require("path");
 
 const SRC_DIR = "src";
-const COMPONENTS_DIR = "src/components";
+const DATA_DIR = path.join("src", "data");
+const COMPONENTS_DIR = path.join("src", "components");
 const OUT_DIR = "docs";
 
-const TAG_RE = /<c-([a-z0-9_-]+)([^>]*?)(?:\s*\/>|>([\s\S]*?)<\/c-\1>)/g;
 const TOKEN_RE =
   /<script\s+&(&)?\s*>([\s\S]*?)<\/script>|\{\{\{([\s\S]+?)\}\}\}|\{\{([\s\S]+?)\}\}/g;
 
@@ -34,18 +34,6 @@ function evaluate(expr, ctx, block) {
   }
 }
 
-function replace_components(html, components, depth = 0) {
-  if (depth > 16) throw new Error("component recursion too deep");
-  return html.replace(TAG_RE, (_, name) => {
-    const tpl = components[name];
-    if (tpl == null) {
-      console.error(`  unknown component <c-${name}>`);
-      return "";
-    }
-    return replace_components(tpl, components, depth + 1);
-  });
-}
-
 function render(tpl, ctx) {
   return tpl.replace(
     TOKEN_RE,
@@ -61,47 +49,63 @@ function render(tpl, ctx) {
   );
 }
 
-function* walk_dir(dir) {
+function* walk_dir(dir, filter = null) {
   for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
     const p = path.join(dir, e.name);
-    if (e.isDirectory()) yield* walk_dir(p);
+    if (filter && filter.includes(p)) continue;
+    if (e.isDirectory()) yield* walk_dir(p, filter);
     else yield p;
   }
 }
 
-function load_ctx() {
-  const ctx = { now: new Date() };
-  for (const f of walk_dir(SRC_DIR)) {
-    if (!f.endsWith(".json")) continue;
-    ctx[path.basename(f, ".json")] = JSON.parse(fs.readFileSync(f, "utf8"));
-  }
-  return ctx;
-}
-
-function load_components() {
-  const out = {};
+function load_components(ctx) {
+  const c = {};
   if (!fs.existsSync(COMPONENTS_DIR)) return out;
   for (const f of walk_dir(COMPONENTS_DIR)) {
     if (!f.endsWith(".html")) continue;
-    out[path.basename(f, ".html")] = fs.readFileSync(f, "utf8");
+    const template = fs.readFileSync(f, "utf8");
+    const name = path.basename(f, ".html");
+    c[name] = (props = {}) =>
+      render(template, {
+        ...ctx,
+        c,
+        props,
+        children: props.children ?? "",
+      });
   }
-  return out;
+  return c;
+}
+
+function load_data() {
+  const data = { now: new Date() };
+  if (!fs.existsSync(DATA_DIR)) return data;
+  for (const f of walk_dir(DATA_DIR)) {
+    if (!f.endsWith(".json")) continue;
+    const p = path.relative(DATA_DIR, f);
+    const parts = p.split(path.sep);
+    let obj = data;
+    for (let i = 0; i < parts.length - 1; i++) {
+      const k = parts[i];
+      if (obj[k] == null) obj[k] = {};
+      obj = obj[k];
+    }
+    obj[path.basename(f, ".json")] = JSON.parse(fs.readFileSync(f, "utf8"));
+  }
+  return data;
 }
 
 function build() {
+  fs.rmSync(OUT_DIR, { recursive: true, force: true });
   fs.mkdirSync(OUT_DIR, { recursive: true });
-  const ctx = load_ctx();
-  const components = load_components();
-  for (const f of walk_dir(SRC_DIR)) {
-    if (f.startsWith(COMPONENTS_DIR)) continue;
+  const data = load_data();
+  const components = load_components(data);
+  for (const f of walk_dir(SRC_DIR, [DATA_DIR, COMPONENTS_DIR])) {
     const dst = path.join(OUT_DIR, path.relative(SRC_DIR, f));
     fs.mkdirSync(path.dirname(dst), { recursive: true });
     if (f.endsWith(".html")) {
-      ctx.page = path.parse(f).name;
-      fs.writeFileSync(
-        dst,
-        render(replace_components(fs.readFileSync(f, "utf8"), components), ctx),
-      );
+      data.page = path.parse(f).name;
+      const ctx = { ...data, c: components, page: path.parse(f).name };
+      fs.writeFileSync(dst, render(fs.readFileSync(f, "utf8"), ctx));
       continue;
     }
     fs.copyFileSync(f, dst);
