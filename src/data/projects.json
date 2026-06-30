@@ -1,10 +1,26 @@
 [
   {
+    "id": "blogsoni",
+    "name": "blogsoni",
+    "repo": "https://github.com/JanGolicnik/rss",
+    "description": "public rss feed",
+    "tags": ["js", "rss"],
+    "favorite": true
+  },
+  {
+    "id": "10 minutes",
+    "name": "10 minutes",
+    "site": "https://mauiewauwie.itch.io/10-minutes",
+    "description": "game made at kontrolerji workshop with a friend",
+    "tags": ["ue5", "game"],
+    "favorite": true
+  },
+  {
     "id": "printccy",
     "name": "printccy",
     "repo": "https://github.com/JanGolicnik/printccy",
     "description": "printf(\"hello {}\", user)",
-    "tags": "c",
+    "tags": ["c"],
     "favorite": true
   },
   {
@@ -17,7 +33,7 @@
   },
   {
     "id": "yakuza-tower",
-    "name": "yakuza Tower",
+    "name": "yakuza tower",
     "repo": "https://github.com/Duckpedia/Yakuza-Tower",
     "description": "javascript game made as a group, i made the engine",
     "tags": ["js", "webgpu", "game"]
@@ -39,18 +55,11 @@
     "favorite": true
   },
   {
-    "id": "graphics-demos",
-    "name": "graphics_demos",
-    "repo": "https://github.com/JanGolicnik/graphics_demos",
-    "description": "shadow mapping, datamoshing, skeletal animation and a few others.",
-    "tags": ["rust", "webgpu"]
-  },
-  {
     "id": "cpp-ray-tracer",
     "name": "software ray tracer",
     "repo": "https://github.com/JanGolicnik/CppRayTracerEngine",
     "description": "cpu ray tracer based on the PBR book",
-    "tags": "c++"
+    "tags": ["c++"]
   },
   {
     "id": "ant-simulation",
