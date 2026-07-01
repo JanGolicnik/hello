@@ -1,11 +1,9 @@
 :root {
-    --bg: #1a1916;
-    --text: #e8dec3;
-    --link: #d4ad6a;
-    --link-hover: #f0c98a;
-    --link-visited: #b89968;
-    --muted: #968a73;
-    --border: #2e2a23;
+    --bg: #030308;
+    --text: #b1ea85;
+    --muted: #aac497;
+    --link: #fb4b54;
+    --link-hover: #fc737a;
     --mono: ui-monospace, "SF Mono", "Menlo", "Consolas", monospace;
 }
 

@@ -27,12 +27,9 @@
                                 return `
                                        <article id="${p.id}" class="card">
                                            <div class="tags">
-                                               <p>
+                                               <a href="${p.repo}">
                                                    ${p.name}
-                                                   <span class="meta"
-                                                       >(<a href="${p.repo}">repo</a>)</span
-                                                   >
-                                               </p>
+                                               </a>
                                                ${tags}
                                            </div>
                                            <p class="indent">${p.description}</p>
