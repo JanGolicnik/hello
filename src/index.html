@@ -5,60 +5,57 @@
         {{{ c.nav() }}}
 
         <main>
-            <section role="content">
-                <h1>hello !!</h1>
-                <article class="indent">
-                    <p>
-                        i am a game engine developer from ljubljana, slovenia
-                        <span
-                            ><script &>
-                                const bd = new Date(2004, 9, 18);
-                                const t = new Date();
-                                let age = t.getFullYear() - bd.getFullYear();
-                                const had =
-                                    t.getMonth() > bd.getMonth() ||
-                                    (t.getMonth() === bd.getMonth() &&
-                                        t.getDate() >= bd.getDate());
-                                return had ? age : age - 1;
-                            </script></span
-                        >
-                        years old
-                    </p>
-                    <p>
-                        i do simulation, graphics programming, low level stuff
-                        and webdev
-                    </p>
-                    <p>
-                        currently employed at guardiaris and studying at FRI
-                        ljubljana
-                    </p>
-                    <p>
-                        i also run
-                        <a href="https://blogsoni.duckdns.org">blogsoni</a>
-                    </p>
-                </article>
+            <h1>hello !!</h1>
+            <article class="indent">
+                <p>
+                    i am a game engine developer from ljubljana, slovenia
+                    <span
+                        ><script &>
+                            const bd = new Date(2004, 9, 18);
+                            const t = new Date();
+                            let age = t.getFullYear() - bd.getFullYear();
+                            const had =
+                                t.getMonth() > bd.getMonth() ||
+                                (t.getMonth() === bd.getMonth() &&
+                                    t.getDate() >= bd.getDate());
+                            return had ? age : age - 1;
+                        </script></span
+                    >
+                    years old
+                </p>
+                <p>
+                    i do simulation, graphics programming, low level stuff
+                    and webdev
+                </p>
+                <p>
+                    currently employed at guardiaris and studying at FRI
+                    ljubljana
+                </p>
+                <p>
+                    i also run
+                    <a href="https://blogsoni.duckdns.org">blogsoni</a>
+                </p>
+            </article>
 
-                <h2>links</h2>
-                <article class="indent">
-                    <a href="https://github.com/jangolicnik">/ github</a><br />
-                    <a href="mailto:jan@nejka.net">/ email</a><br />
-                </article>
+            <h2>links</h2>
+            <article class="indent">
+                <a href="https://github.com/jangolicnik">/ github</a><br />
+                <a href="mailto:jan@nejka.net">/ email</a><br />
+            </article>
 
-                <h2>my stuff</h2>
-                <article class="indent">
-                    <script &&>
-                        return projects
-                            .map(
-                                (p) => `
-                                    <a href="${p.repo}">/ ${p.name}</a><br />
-                                    `,
-                            )
-                            .join("\n");
-                    </script>
-                </article>
-            </section>
-
-            {{{ c.plant() }}}
+            <h2>my stuff</h2>
+            <article class="indent">
+                <script &&>
+                    return projects
+                        .map(
+                            (p) => `
+                                <a href="${p.repo}">/ ${p.name}</a><br />
+                                `,
+                        )
+                        .join("\n");
+                </script>
+            </article>
         </main>
+        {{{ c.plant() }}}
     </body>
 </html>
