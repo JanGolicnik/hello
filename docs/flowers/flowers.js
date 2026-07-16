@@ -1,30 +1,10 @@
 const canvas = document.querySelector("#flowers");
 const ctx = canvas.getContext("2d");
 
-let flowers_config = [
-  { path: "./flowers/flower1.svg" },
-  { path: "./flowers/flower2.svg" },
-  { path: "./flowers/flower3.svg" },
-  { path: "./flowers/flower4.svg" },
-  { path: "./flowers/flower5.svg" },
-  { path: "./flowers/flower6.svg" },
-];
-let boring_config = [
-  { path: "./flowers/boring1.svg" },
-  { path: "./flowers/boring2.svg" },
-  { path: "./flowers/boring3.svg" },
-  { path: "./flowers/boring4.svg" },
-  { path: "./flowers/boring5.svg" },
-  { path: "./flowers/boring6.svg" },
-];
-let leaves_config = [
-  { path: "./flowers/leaf1.svg", nocolor: true },
-  { path: "./flowers/leaf2.svg", nocolor: true },
-  { path: "./flowers/leaf3.svg", nocolor: true },
-  { path: "./flowers/leaf4.svg", nocolor: true },
-  { path: "./flowers/leaf5.svg", nocolor: true },
-  { path: "./flowers/leaf6.svg", nocolor: true },
-];
+const n_flowers = 12;
+const n_leaves = 6;
+let flowers_config = [];
+let leaves_config = [];
 const view = { zoom: 1, s: 1, w: 0, h: 0, l: 0, r: 0, t: 0, b: 0 };
 let c = {
   r: canvas.width * 0.5,
@@ -52,16 +32,11 @@ async function load_svgs() {
     };
   };
 
-  for (var flower of flowers_config) {
-    flower.svg = await load(flower.path);
+  for (let i = 1; i <= n_flowers; i++) {
+    flowers_config.push({ svg: await load(`./flowers/flower${i}.svg`) });
   }
-
-  for (var boring of boring_config) {
-    boring.svg = await load(boring.path);
-  }
-
-  for (var leaf of leaves_config) {
-    leaf.svg = await load(leaf.path);
+  for (let i = 1; i <= n_leaves; i++) {
+    leaves_config.push({ svg: await load(`./flowers/leaf${i}.svg`), nocolor: true });
   }
 }
 
@@ -208,7 +183,7 @@ function flower_generate(config, flower_t, time) {
   const n_points = 5;
   const spread = 200;
   const height = rng(c.b, canvas.height - 200);
-  const x = c.r - 300 - rng(-25, 25);
+  const x = c.r - 300 - rng(-30, 30);
 
   const start = { x: x, y: c.b };
   const end = {
@@ -250,7 +225,6 @@ function flower_generate(config, flower_t, time) {
     flip: rng() > 0.5,
     phase: rng(-0.5, 0.5),
     scale: rng(0.75, 1.0),
-    sway: lerp(0.6, 1.4, flower_t),
   };
 }
 
@@ -263,6 +237,7 @@ function flower_render(flower, time, t) {
   ctx.rotate(angle);
   ctx.translate(-flower.origin.x, -flower.origin.y);
 
+  ctx.globalAlpha = lerp(0.75, 1.0, flower.t);
   ctx.setLineDash([t * flower.len, flower.len]);
   ctx.stroke(flower.path);
   ctx.setLineDash([]);
@@ -278,7 +253,7 @@ function flower_render(flower, time, t) {
     });
   }
 
-  if(!flower.config.nocolor) ctx.fillStyle = css_var("flower");
+  if (!flower.config.nocolor) ctx.fillStyle = css_var("flower");
   const p1 = flower.sample(t);
   const p2 = flower.sample(t + 0.1);
   render_svg({
@@ -326,14 +301,17 @@ function render(time) {
 
   const flowers = [];
   for (let i = 0; i < n_flowers; i++) {
-    const configs = rng() > 0.3 ? leaves_config : rng() > 0.5 ? boring_config : flowers_config;
-    const boring = flower_generate(
-      configs[rngi(0, configs.length)],
-      indices[i] / (n_flowers - 1),
-      time
-    );
-    boring.sway = lerp(0.3, 0.6, i / (n_flowers - 1));
-    flowers.push(boring);
+    const configs = rng() > 0.3 ? leaves_config : flowers_config;
+    const t = i / (n_flowers - 1);
+    flowers.push({
+      t,
+      sway: lerp(0.3, 0.6, t),
+      ...flower_generate(
+        configs[rngi(0, configs.length)],
+        indices[i] / (n_flowers - 1),
+        time,
+      ),
+    });
   }
 
   const target_t = clamp(1.0 - mouse.y / canvas.height, 0.4, 0.95);
