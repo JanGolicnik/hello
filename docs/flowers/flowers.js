@@ -8,10 +8,23 @@ let flowers_config = [
   { path: "./flowers/flower4.svg" },
   { path: "./flowers/flower5.svg" },
   { path: "./flowers/flower6.svg" },
-  { path: "./flowers/flower7.svg" },
-  { path: "./flowers/flower8.svg" },
 ];
-let leaves_config = [{ path: "./flowers/leaf1.svg" }];
+let boring_config = [
+  { path: "./flowers/boring1.svg" },
+  { path: "./flowers/boring2.svg" },
+  { path: "./flowers/boring3.svg" },
+  { path: "./flowers/boring4.svg" },
+  { path: "./flowers/boring5.svg" },
+  { path: "./flowers/boring6.svg" },
+];
+let leaves_config = [
+  { path: "./flowers/leaf1.svg" },
+  { path: "./flowers/leaf2.svg" },
+  { path: "./flowers/leaf3.svg" },
+  { path: "./flowers/leaf4.svg" },
+  { path: "./flowers/leaf5.svg" },
+  { path: "./flowers/leaf6.svg" },
+];
 const view = { zoom: 1, s: 1, w: 0, h: 0, l: 0, r: 0, t: 0, b: 0 };
 let c = {
   r: canvas.width * 0.5,
@@ -43,18 +56,21 @@ async function load_svgs() {
     flower.svg = await load(flower.path);
   }
 
+  for (var boring of boring_config) {
+    boring.svg = await load(boring.path);
+  }
+
   for (var leaf of leaves_config) {
     leaf.svg = await load(leaf.path);
   }
 }
 
-// https://gist.github.com/nicholaswmin/c2661eb11cad5671d816
-function catmul_rom(points, alpha = 0.5) {
+// modified from: https://gist.github.com/nicholaswmin/c2661eb11cad5671d816
+function catmul_rom(points) {
   if (!Array.isArray(points))
     throw TypeError(`'points' should be an Array. Got: ${typeof points}`);
 
-  if (![0.5, 1].includes(alpha))
-    throw RangeError(`'alpha' should be: 1 or 0.5. Got: ${alpha}`);
+  const alpha = 0.5;
 
   let p0, p1, p2, p3, bp1, bp2, d1, d2, d3, A, B, N, M;
   let d3powA, d2powA, d3pow2A, d2pow2A, d1pow2A, d1powA;
@@ -122,10 +138,11 @@ function catmul_rom(points, alpha = 0.5) {
 }
 
 const wind = { x: 0, v: 0, s: 0 };
-let last_mx = null;
+const mouse = { x: null, y: null };
 addEventListener("pointermove", (e) => {
-  if (last_mx !== null) wind.s += e.clientX - last_mx;
-  last_mx = e.clientX;
+  if (mouse.x !== null) wind.s += e.clientX - mouse.x;
+  mouse.x = e.clientX;
+  mouse.y = e.clientY;
 });
 
 function clamp(val, min, max) {
@@ -140,13 +157,13 @@ function wind_update(dt) {
 }
 
 const DEG = 180.0 / Math.PI;
-function render_svg(svg, x, y, s, a, flip) {
+function render_svg(o) {
   const m = new DOMMatrix()
-    .translateSelf(x, y)
-    .rotateSelf(a * DEG)
-    .scaleSelf(flip ? -s : s, s)
-    .translateSelf(-svg.anchor.x, -svg.anchor.y);
-  for (const { path, fill } of svg.paths) {
+    .translateSelf(o.x, o.y)
+    .rotateSelf(o.angle * DEG)
+    .scaleSelf(o.flip ? -o.scale : o.scale, o.scale)
+    .translateSelf(-o.svg.anchor.x, -o.svg.anchor.y);
+  for (const { path, fill } of o.svg.paths) {
     const transformed = new Path2D();
     transformed.addPath(path, m);
     if (fill) ctx.fill(transformed, "nonzero");
@@ -165,58 +182,80 @@ function rng(min = 0, max = 1) {
   return min + val * (max - min);
 }
 
-function angle(a, b) {
-  return Math.atan2(b.y - a.y, b.x - a.x);
+function angle_between(a, b) {
+  return Math.atan2(b.y - a.y, b.x - a.x) + Math.PI * 0.5;
 }
 
-function flower_generate(config) {
+function lerp(a, b, t) {
+  return a + (b - a) * t;
+}
+
+function shuffle(array) {
+  for (var i = array.length - 1; i > 0; i--) {
+    var j = Math.floor(rng(0, i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
+
+function flower_generate(config, flower_t, time) {
   const points = [];
   const leaves = [];
 
-  const n = 5;
+  const n_points = 5;
+  const spread = 200;
   const height = rng(c.b, canvas.height - 200);
   const x = c.r - 300 - rng(-20, 20);
+
   const start = { x: x, y: c.b };
-  const end = { x: x + rng(-200, 200), y: c.b - height };
-  for (let i = 0; i < n; i++) {
-    const t = i / (n - 1);
+  const end = {
+    x: x - lerp(-spread, spread, flower_t),
+    y: c.b - height,
+  };
+
+  for (let i = 0; i < n_points; i++) {
+    const t = i / (n_points - 1);
     const offset = t * rng(-1, 1) * 50.0;
     const x = start.x + (end.x - start.x) * t + offset;
     const y = start.y + (end.y - start.y) * t;
     points.push({ x, y });
-    if (i > 1 && i < n - 1 && rng() > 0.5) {
+    if (i > 1 && i < n_points - 1 && rng() > 0.5) {
+      const config =
+        leaves_config[Math.floor(rng(0, leaves_config.length - 1))];
       const flip = rng() > 0.5;
       const leaf = {
-        svg: leaves_config[0].svg,
-        x,
-        y,
-        lag: rng(0, 1),
+        svg: config.svg,
+        lag: rng(1.0, 2.0),
         scale: rng(0.5, 1.0),
         flip,
-        angle: angle(points.last(2), points.last()) + Math.PI * 0.5,
+        t,
       };
       leaves.push(leaf);
       if (rng() > 0.9) leaves.push({ ...leaf, flip: !flip });
     }
   }
 
+  const catmul = catmul_rom(points, time);
+  const el = document.createElementNS("http://www.w3.org/2000/svg", "path");
+  el.setAttribute("d", catmul_rom(points));
+  const len = el.getTotalLength();
+
   return {
-    path: new Path2D(catmul_rom(points)),
+    path: new Path2D(catmul),
+    sample: (t) => el.getPointAtLength(t * len),
+    len,
     origin: { x: points[0].x, y: points[0].y + 100 },
     leaves,
-    sway: rng(0.6, 1.4),
+    sway: lerp(0.6, 1.4, flower_t),
     phase: rng(-0.5, 0.5),
     flower: {
       svg: config.svg,
-      scale: rng(0.5, 1.0),
-      x: points.last().x,
-      y: points.last().y,
-      angle: angle(points.last(2), points.last()) + Math.PI * 0.5,
+      scale: rng(0.75, 1.0),
+      flip: rng() > 0.5,
     },
   };
 }
 
-function flower_render(flower, time) {
+function flower_render(flower, time, t) {
   const ambient = Math.sin(flower.phase + time) * 0.1;
   const angle = ambient + wind.x * flower.sway;
 
@@ -225,29 +264,38 @@ function flower_render(flower, time) {
   ctx.rotate(angle);
   ctx.translate(-flower.origin.x, -flower.origin.y);
 
+  ctx.setLineDash([t * flower.len, flower.len]);
   ctx.stroke(flower.path);
+  ctx.setLineDash([]);
+
+  ctx.fillStyle = css_var("bg");
   for (const leaf of flower.leaves) {
-    render_svg(
-      leaf.svg,
-      leaf.x,
-      leaf.y,
-      leaf.scale,
-      leaf.angle + angle * 5.0 * leaf.lag,
-      leaf.flip,
-    );
+    const p = flower.sample(leaf.t * t);
+    render_svg({
+      ...leaf, x: p.x, y: p.y,
+      angle: angle * leaf.lag,
+    });
   }
-  render_svg(
-    flower.flower.svg,
-    flower.flower.x,
-    flower.flower.y,
-    flower.flower.scale,
-    flower.flower.angle + angle * 0.5,
-  );
+
+  ctx.fillStyle = css_var("flower");
+  const p1 = flower.sample(t);
+  const p2 = flower.sample(t + 0.1);
+  render_svg({
+    ...flower.flower, x: p1.x, y: p1.y,
+    angle: angle_between(p1, p2) + angle * 0.5,
+  });
 
   ctx.restore();
 }
 
+let root = null;
+function css_var(name) {
+  root ??= getComputedStyle(document.querySelector(":root"));
+  return root.getPropertyValue(`--${name}`);
+}
+
 let last_time = 0;
+let flower_t = 0;
 function render(time) {
   time /= 1000;
   const dt = Math.min(0.05, time - last_time);
@@ -260,26 +308,31 @@ function render(time) {
   ctx.setTransform(view.s, 0, 0, view.s, canvas.width / 2, canvas.height / 2);
   ctx.lineWidth = 8;
   ctx.strokeStyle = "#030308";
-  ctx.fillStyle = "#FF7770";
   ctx.lineJoin = ctx.lineCap = "round";
 
   seed = initial_seed;
   time += rng(0.0, 100.0);
 
-  const n_flowers = 5;
+  const n_flowers = 6;
+
   const indices = [];
-  for (let i = 0; i < n_flowers; i++) {
-    indices.push(Math.floor(rng(0, flowers_config.length)));
-  }
+  for (let i = 0; i < n_flowers; i++) indices.push(i);
+  shuffle(indices);
 
   const flowers = [];
-  for (const i of indices) {
-    flowers.push(flower_generate(flowers_config[i]));
+  for (let i = 0; i < n_flowers; i++) {
+    const configs = rng() > 0.5 ? boring_config : flowers_config;
+    const flower_i = Math.floor(rng(0, configs.length));
+    const t = indices[i] / (n_flowers - 1);
+    const boring = flower_generate(configs[flower_i], t, time);
+    boring.sway = lerp(0.3, 0.6, i / (n_flowers - 1));
+    flowers.push(boring);
   }
 
-  // render stem
+  const target_t = Math.max(0.3, 1.0 - (mouse.y / canvas.height));
+  flower_t += (target_t - flower_t) * (1.0 - Math.exp(-dt));
   for (const flower of flowers) {
-    flower_render(flower, time);
+    flower_render(flower, time, flower_t);
   }
 
   requestAnimationFrame(render);

@@ -5,6 +5,9 @@
     --muted: #aac497;
     --link: #FF5147;
     --link-hover: #fc737a;
+
+    --flower: #fc737a;
+
     --mono: ui-monospace, "SF Mono", "Menlo", "Consolas", monospace;
     --main-width: 50%;
 }
