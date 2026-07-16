@@ -1,12 +1,13 @@
 :root {
     --bg: #FFFCF2;
-    --bg-header: #030308;
+    --bg-header: #185477;
     --text: #185477;
     --muted: #aac497;
     --link: #FF5147;
     --link-hover: #fc737a;
 
     --flower: #fc737a;
+    --flower-line: #113C55;
 
     --mono: ui-monospace, "SF Mono", "Menlo", "Consolas", monospace;
     --main-width: 50%;
@@ -51,6 +52,7 @@ a:hover {
 nav {
     padding: 2rem 0 2rem 2rem;
     border-bottom: 6px double var(--link);
+    background-color: var(--bg-header);
 }
 
 nav a {
