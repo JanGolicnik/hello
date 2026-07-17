@@ -1,5 +1,5 @@
 <nav>
-    <a {{ page === 'index' ? "aria-current=page" : "" }} href="./">hello</a>
-    <a {{ page === 'about' ? "aria-current=page" : "" }} href="./about.html">about</a>
-    <a {{ page === 'projects' ? "aria-current=page" : "" }} href="./projects.html">projects</a>
+    <a class="samepage" {{ page === 'index' ? "aria-current=page" : "" }} href="#hello">hello</a>
+    <a class="samepage" {{ page === 'about' ? "aria-current=page" : "" }} href="#about">about</a>
+    <a class="samepage" {{ page === 'projects' ? "aria-current=page" : "" }} href="#projects">projects</a>
 </nav>

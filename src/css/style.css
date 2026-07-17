@@ -11,22 +11,21 @@
 
     --font: monospace, monospace;
     --main-width: 600px;
+
+    --indent: 1.5rem;
 }
 
 * {
     box-sizing: border-box;
     font-family: var(--font);
     font-weight: 600;
+    letter-spacing: .025em;
     line-height: 150%;
     font-size: 20px;
 }
 
-h1 {
-    font-size: 1.5rem;
-}
-
-h2 {
-    font-size: 1.25rem;
+html {
+    scroll-behavior: smooth;
 }
 
 html,
@@ -34,18 +33,39 @@ body {
     margin: 0;
     padding: 0;
     background: var(--bg);
-    height: 100%;
+    min-height: 100%;
     color: var(--text);
 }
 
-main {
+h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0;
+    scroll-margin-top: 5rem;
+}
+
+h2 {
+    font-size: 1.25rem;
+}
+
+h3 {
+    font-size: 1.175rem;
+}
+
+section, .indent {
+    padding-left: var(--indent);
+}
+
+main, div.gap {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-
     width: 100%;
+    padding-left: var(--indent);
+}
+
+main {
     max-width: var(--main-width);
-    padding: 1rem 2rem 10em 2rem;
+    padding-bottom: 10rem;
 }
 
 a {
@@ -59,6 +79,8 @@ a:hover {
 }
 
 nav {
+    position: sticky;
+    top: 0;
     display: flex;
     flex-direction: row;
     gap: 2rem;
@@ -67,8 +89,8 @@ nav {
     background-color: var(--header);
 }
 
-nav a::before {
-    content: "/";
+a.samepage::before {
+    content: "#";
 }
 
 canvas {

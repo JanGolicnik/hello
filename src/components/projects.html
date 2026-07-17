@@ -1,22 +1,24 @@
-<h1>projects</h1>
-<script &&>
-    return projects
-        .map((p) => {
-            const tagsArray =
-                typeof p.tags === "string"
-                    ? [p.tags]
-                    : Array.isArray(p.tags)
-                        ? p.tags
-                        : [];
-            return `
-                    <article id="${p.id}" class="card">
-                        <h2>
-                            <a href="${p.repo}">${p.name}</a>
-                            <span class="muted">${tagsArray.join(' ')}</span>
-                        </h2>
-                        <p class="indent">${p.description}</p>
-                    </article>
-                    `;
-        })
-        .join("\n");
-</script>
+<h1 id="projects">projects</h1>
+    <script &&>
+        return projects
+            .map((p) => {
+                const tagsArray =
+                    typeof p.tags === "string"
+                        ? [p.tags]
+                        : Array.isArray(p.tags)
+                            ? p.tags
+                            : [];
+                return `
+                        <article id="${p.id}" class="indent">
+                            <h2>
+                                <a href="${p.repo}">${p.name}</a>
+                                <span class="muted">${tagsArray.join(' ')}</span>
+                            </h2>
+                            <section>
+                              <p>${p.description}</p>
+                            </section>
+                        </article>
+                        `;
+            })
+            .join("\n");
+    </script>

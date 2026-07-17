@@ -1,5 +1,5 @@
+<h1 id="hello">hello !!</h1>
 <article class="indent">
-    <h1>hello !!</h1>
     <p>
         i am a
         <script &>
@@ -8,8 +8,7 @@
             let age = t.getFullYear() - bd.getFullYear();
             const had =
                 t.getMonth() > bd.getMonth() ||
-                (t.getMonth() === bd.getMonth() &&
-                    t.getDate() >= bd.getDate());
+                (t.getMonth() === bd.getMonth() && t.getDate() >= bd.getDate());
             return had ? age : age - 1;
         </script>
         year old game engine developer from ljubljana, slovenia
@@ -24,19 +23,27 @@
 
 <article class="indent">
     <h2>social</h2>
-    <a href="https://github.com/jangolicnik">/ github</a><br />
-    <a href="mailto:jan@nejka.net">/ email</a><br />
+    <section>
+        <p>
+            <a href="https://github.com/jangolicnik">github</a><br />
+            <a href="mailto:jan@nejka.net">email</a>
+        </p>
+    </section>
 </article>
 
 <article class="indent">
     <h2>my stuff</h2>
-    <script &&>
-        return projects
-            .map(
-                (p) => `
-                    <a href="${p.repo}">/ ${p.name}</a><br />
-                    `,
-            )
-            .join("\n");
-    </script>
+    <section>
+        <p>
+            <script &&>
+                return projects
+                    .map(
+                        (p) => `
+                            <a class="samepage" href="#${p.id}">${p.name}</a><br />
+                            `,
+                    )
+                    .join("\n");
+            </script>
+        </p>
+    </section>
 </article>
