@@ -1,34 +1,21 @@
-<article>
-    <script &&>
-        return projects
-            .map((p) => {
-                const tagsArray =
-                    typeof p.tags === "string"
-                        ? [p.tags]
-                        : Array.isArray(p.tags)
-                          ? p.tags
-                          : [];
-                let tags = tagsArray.length
-                    ? `${tagsArray
-                          .map(
-                              (t) => `
-                       <p class="muted">${t}</p>
-                       `,
-                          )
-                          .join("")}`
-                    : "";
-                return `
-                       <article id="${p.id}" class="card">
-                           <div class="tags">
-                               <a href="${p.repo}">
-                                   ${p.name}
-                               </a>
-                               ${tags}
-                           </div>
-                           <p class="indent">${p.description}</p>
-                       </article>
-                       `;
-            })
-            .join("\n");
-    </script>
-</article>
+<script &&>
+    return projects
+        .map((p) => {
+            const tagsArray =
+                typeof p.tags === "string"
+                    ? [p.tags]
+                    : Array.isArray(p.tags)
+                        ? p.tags
+                        : [];
+            return `
+                    <article id="${p.id}" class="card">
+                        <h2>
+                            <a href="${p.repo}">${p.name}</a>
+                            <span class="muted">${tagsArray.join(' ')}</span>
+                        </h2>
+                        <p class="indent">${p.description}</p>
+                    </article>
+                    `;
+        })
+        .join("\n");
+</script>

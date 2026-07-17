@@ -1,5 +1,6 @@
 :root {
-    --bg: #fffcf2;
+    --bg: #ffe9b6;
+    --header: #185477;
     --text: #185477;
     --muted: #185477e0;
     --link: #ff5147;
@@ -8,17 +9,24 @@
     --flower: #fc737a;
     --flower-line: #185477;
 
-    --mono: ui-monospace, "SF Mono", "Menlo", "Consolas", monospace;
-    --main-width: 50%;
+    --font: monospace, monospace;
+    --main-width: 600px;
 }
 
 * {
     box-sizing: border-box;
-    font: 16px/1.6 var(--mono);
+    font-family: var(--font);
+    font-weight: 600;
+    line-height: 150%;
+    font-size: 20px;
 }
 
-* {
-    font-weight: 600;
+h1 {
+    font-size: 1.5rem;
+}
+
+h2 {
+    font-size: 1.25rem;
 }
 
 html,
@@ -30,48 +38,37 @@ body {
     color: var(--text);
 }
 
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    width: 100%;
+    max-width: var(--main-width);
+    padding: 1rem 2rem 10em 2rem;
+}
+
 a {
     color: var(--link);
     text-decoration: none;
 }
+
 a:hover {
     color: var(--link-hover);
     text-decoration: underline;
 }
 
-.indent {
-    padding-left: 5rem;
-}
-
 nav {
-    padding: 1rem 0 1rem 2rem;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    padding: 1rem 0 1rem 1rem;
     border-bottom: 6px double var(--link);
-    background-color: var(--text);
+    background-color: var(--header);
 }
 
-nav a {
-    margin-right: 2rem;
-    white-space: nowrap;
-}
-
-main {
-    width: 100%;
-    max-width: var(--main-width);
-    padding: 1rem 2rem 10em 2rem;
-    gap: 1rem;
-}
-
-main h2 {
-    margin: 0 0 0.5rem;
-    color: var(--text);
-}
-
-article {
-    margin-bottom: 2.5rem;
-}
-
-.muted {
-    color: var(--muted);
+nav a::before {
+    content: "/";
 }
 
 canvas {
@@ -83,6 +80,10 @@ canvas {
     pointer-events: none;
 }
 
+.muted {
+    color: var(--muted);
+}
+
 .tags {
     display: flex;
     flex-direction: row;
@@ -90,9 +91,13 @@ canvas {
     align-items: center;
 }
 
+.indent {
+    padding-left: 1.5rem;
+}
+
 @media (max-width: 700px) {
     .indent {
-        padding-left: 3rem;
+        padding-left: 0;
     }
     main {
         max-width: unset;
