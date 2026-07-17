@@ -1,3 +1,13 @@
-<script &&>
-    return c.base({ body: c.hello() + c.about() + c.projects() });
-</script>
+<!doctype html>
+<html lang="en">
+    {{{ c.head() }}}
+    <body>
+        {{{ c.nav() }}}
+        <main>
+            {{{ c.hello() }}}
+            {{{ c.about() }}}
+            {{{ c.projects() }}}
+        </main>
+        {{{ c.plant() }}}
+    </body>
+</html>
