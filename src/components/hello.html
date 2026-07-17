@@ -1,15 +1,18 @@
 <h1 id="hello">hello !!</h1>
 <article class="indent">
+    <p>im jan !</p>
     <p>
-        i am a
+        im a
         <script &>
             const bd = new Date(2004, 9, 18);
             const t = new Date();
             let age = t.getFullYear() - bd.getFullYear();
-            const had =
-                t.getMonth() > bd.getMonth() ||
-                (t.getMonth() === bd.getMonth() && t.getDate() >= bd.getDate());
-            return had ? age : age - 1;
+            if (
+                t.getMonth() < bd.getMonth() ||
+                (t.getMonth() === bd.getMonth() && t.getDate() < bd.getDate())
+            )
+                age--;
+            return age;
         </script>
         year old game engine developer from ljubljana, slovenia
     </p>
@@ -18,21 +21,22 @@
         messing around on the web
     </p>
     <p>
-        currently really interested in the indie web
+        right now im really interested in the indie web and all the cool stuff
+        around it
     </p>
-    <p>i'm currently employed at guardiaris and studying at FRI ljubljana</p>
+    <p>employed at guardiaris and studying at FRI ljubljana</p>
     <p>
         i also run
-        <a href="https://blogsoni.duckdns.org">blogsoni</a>
+        <a href="https://blogsoni.com">blogsoni</a>
     </p>
 </article>
 
 <article class="indent">
-    <h2>social</h2>
+    <h2>reach me at</h2>
     <section>
         <p>
-            <a href="mailto:jan@nejka.net">email</a>
-            <a href="https://github.com/jangolicnik">github</a><br />
+            <a href="mailto:jan@nejka.net">email</a><br />
+            <a href="https://github.com/jangolicnik">github</a>
         </p>
     </section>
 </article>

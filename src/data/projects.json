@@ -3,7 +3,7 @@
     "id": "blogsoni",
     "name": "blogsoni",
     "repo": "https://github.com/JanGolicnik/rss",
-    "description": "public rss feed",
+    "description": "public rss feed aggregator",
     "tags": ["js", "rss"],
     "favorite": true
   },
