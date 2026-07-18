@@ -1,3 +1,18 @@
+@font-face {
+    font-family: "Inter";
+    src: url("/docs/fonts/inter.woff2") format("woff2");
+    font-weight: 100 900;
+    font-display: swap;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Gaegu";
+    src: url("/docs/fonts/gaegu.woff2") format("woff2");
+    font-weight: 700;
+    font-display: swap;
+}
+
 :root {
     --bg: #ffe9b6;
     --header: #185477;
@@ -9,20 +24,24 @@
     --flower: #fc737a;
     --flower-line: #185477;
 
-    --font: monospace, monospace;
-    --main-width: 600px;
-
+    --main-width: 900px;
     --indent: 1.5rem;
     --small: false;
+
+    --normal-font: Inter;
+    --normal-font-size: 25px;
+    --normal-font-line-height: 150%;
+
+    --cool-font: "Gaegu";
+    --cool-font-size1: 2.5rem;
+    --cool-font-size2: 2rem;
+    --cool-font-size3: 1.5rem;
+    --cool-font-line-height: 90%;
 }
 
 * {
     box-sizing: border-box;
-    font-family: var(--font);
-    font-weight: 600;
-    letter-spacing: .025em;
-    line-height: 150%;
-    font-size: 20px;
+    scroll-margin-top: 5rem;
 }
 
 html {
@@ -36,27 +55,43 @@ body {
     background: var(--bg);
     min-height: 100%;
     color: var(--text);
+
+    font-family: var(--normal-font);
+    font-size: var(--normal-font-size);
+    line-height: var(--normal-font-line-height);
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--cool-font);
+    line-height: var(--cool-font-line-height);
+    margin: 1.5rem 0;
 }
 
 h1 {
-    font-size: 1.5rem;
+    /*font-size: 2rem;*/
     margin-bottom: 0;
-    scroll-margin-top: 5rem;
+    font-size: var(--cool-font-size1);
 }
 
 h2 {
-    font-size: 1.25rem;
+    /*font-size: 1.5rem;*/
+    font-size: var(--cool-font-size2);
 }
 
 h3 {
-    font-size: 1.175rem;
+    /*font-size: 1.25rem;*/
+    font-size: var(--cool-font-size3);
 }
 
-section, .indent {
+section,
+.indent {
     padding-left: var(--indent);
 }
 
-main, div.gap {
+main,
+div.gap {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
@@ -90,7 +125,11 @@ nav {
     background-color: var(--header);
 }
 
-a.samepage::before {
+nav h3 {
+    margin: 0;
+}
+
+h1::before, a.samepage::before {
     content: "#";
 }
 
@@ -128,7 +167,8 @@ canvas {
     :root {
         --small: true;
     }
-    section, .indent {
+    section,
+    .indent {
         padding-left: 0;
     }
     main {
