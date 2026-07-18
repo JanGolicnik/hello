@@ -1,5 +1,21 @@
 [
   {
+    "id": "picijs",
+    "name": "picijs",
+    "repo": "https://github.com/JanGolicnik/picijs",
+    "description": "minimal web framework",
+    "tags": ["bun", "js framework"],
+    "favorite": true
+  },
+  {
+    "id": "gss",
+    "name": "gospod spletna stran",
+    "repo": "https://github.com/JanGolicnik/gss",
+    "description": "static site generator",
+    "tags": ["bun"],
+    "favorite": true
+  },
+  {
     "id": "blogsoni",
     "name": "blogsoni",
     "repo": "https://github.com/JanGolicnik/rss",
