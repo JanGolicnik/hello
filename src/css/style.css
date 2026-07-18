@@ -120,6 +120,12 @@ canvas {
     padding-left: 1.5rem;
 }
 
+#test {
+    position: fixed;
+    inset: 0;
+    background-color: red;
+}
+
 @media (max-width: 500px) {
     :root {
         --small: true;
