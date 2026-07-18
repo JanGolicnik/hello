@@ -120,10 +120,8 @@ canvas {
     padding-left: 1.5rem;
 }
 
-#test {
-    position: fixed;
-    inset: 0;
-    background-color: red;
+#offscreen {
+    display: none;
 }
 
 @media (max-width: 500px) {
@@ -138,5 +136,13 @@ canvas {
     }
     canvas {
         height: 20vh;
+    }
+    #offscreen {
+        display: block;
+        position: fixed;
+        height: 50px;
+        bottom: -40px;
+        width: 100%;
+        background-color: var(--header);
     }
 }

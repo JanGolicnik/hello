@@ -170,7 +170,8 @@ function flower_render(flower, time, t) {
   ctx.rotate(angle);
   ctx.translate(-flower.origin.x, -flower.origin.y);
 
-  ctx.globalAlpha = lerp(0.75, 1.0, flower.t);
+  if (!view.small)
+    ctx.globalAlpha = lerp(0.75, 1.0, flower.t);
   ctx.setLineDash([t * flower.len, flower.len]);
   ctx.stroke(flower.path);
   ctx.setLineDash([]);
@@ -221,7 +222,7 @@ function render(time) {
   seed = initial_seed;
   time += rng(0.0, 100.0);
 
-  const target_t = view.small ? 1 : clamp(1.0 - mouse.y / canvas.height, 0.4, 0.95);
+  const target_t = view.small ? 0.95 : clamp(1.0 - mouse.y / canvas.height, 0.4, 0.95);
   flower_t += (target_t - flower_t) * (1.0 - Math.exp(-dt));
   for (const flower of flowers) {
     flower_render(flower, time, flower_t);
@@ -255,10 +256,9 @@ function flower_generate(config, flower_t) {
     return { start, end };
   })();
 
-  const points = [{ x: start.x, y: start.y + 100, t: -1.0 }];
+  const points = [];
   const leaves = [];
   const n_points = 5;
-
   const dir = { x: end.x - start.x, y: end.y - start.y}
   for (let i = 0; i < n_points; i++) {
     const t = i / (n_points - 1);
