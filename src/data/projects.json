@@ -10,7 +10,7 @@
   {
     "id": "10 minutes",
     "name": "10 minutes",
-    "site": "https://mauiewauwie.itch.io/10-minutes",
+    "repo": "https://mauiewauwie.itch.io/10-minutes",
     "description": "game made at kontrolerji workshop with a friend",
     "tags": ["ue5", "game"],
     "favorite": true
