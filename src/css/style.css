@@ -97,9 +97,10 @@ a.samepage::before {
 canvas {
     position: fixed;
     bottom: 0;
-    inset: 0;
-    width: lvw;
-    height: lvh;
+    left: 0;
+    right: 0;
+    width: 100lvw;
+    height: 100lvh;
     z-index: 9999;
     pointer-events: none;
 }
