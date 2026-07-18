@@ -28,11 +28,11 @@
     --indent: 1.5rem;
     --small: false;
 
-    --normal-font: "jan";
+    --normal-font: Inter;
     --normal-font-size: 25px;
     --normal-font-line-height: 150%;
 
-    --cool-font: "jan";
+    --cool-font: "Gaegu";
     --cool-font-size1: 2.5rem;
     --cool-font-size2: 2rem;
     --cool-font-size3: 1.5rem;
