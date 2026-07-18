@@ -129,7 +129,8 @@ nav h3 {
     margin: 0;
 }
 
-h1::before, a.samepage::before {
+h1::before,
+a.samepage::before {
     content: "#";
 }
 
@@ -178,7 +179,10 @@ canvas {
         height: 20vh;
     }
     nav {
-        padding: .5rem;
+        padding: 0.5rem;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        row-gap: 0;
     }
     #offscreen {
         display: block;
