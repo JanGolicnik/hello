@@ -332,6 +332,8 @@ function resize() {
     t: -canvas.height * 0.5,
   };
 
+  console.log(view, c);
+
   seed = initial_seed;
   generate_flowers();
 }
