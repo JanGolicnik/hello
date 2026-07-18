@@ -1,6 +1,6 @@
 @font-face {
     font-family: "Inter";
-    src: url("./css/fonts/inter.woff2") format("woff2");
+    src: url("./fonts/inter.woff2") format("woff2");
     font-weight: 100 900;
     font-display: swap;
     font-style: normal;
@@ -8,7 +8,7 @@
 
 @font-face {
     font-family: "Gaegu";
-    src: url("./css/fonts/gaegu.woff2") format("woff2");
+    src: url("./fonts/gaegu.woff2") format("woff2");
     font-weight: 700;
     font-display: swap;
 }
