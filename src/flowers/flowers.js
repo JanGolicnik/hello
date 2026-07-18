@@ -6,12 +6,6 @@ const n_leaves = 6;
 let flowers_config = [];
 let leaves_config = [];
 let view = { zoom: 1, s: 1, w: 0, h: 0, l: 0, r: 0, t: 0, b: 0 };
-let c = {
-  r: canvas.width * 0.5,
-  b: canvas.height * 0.5,
-  l: -canvas.width * 0.5,
-  t: -canvas.height * 0.5,
-};
 
 function clamp(val, min, max) {
   return Math.min(max, Math.max(min, val));
@@ -227,7 +221,7 @@ function render(time) {
   seed = initial_seed;
   time += rng(0.0, 100.0);
 
-  const target_t = clamp(1.0 - mouse.y / canvas.height, 0.4, 0.95);
+  const target_t = view.small ? 1 : clamp(1.0 - mouse.y / canvas.height, 0.4, 0.95);
   flower_t += (target_t - flower_t) * (1.0 - Math.exp(-dt));
   for (const flower of flowers) {
     flower_render(flower, time, flower_t);
@@ -237,26 +231,41 @@ function render(time) {
 }
 
 function flower_generate(config, flower_t) {
-  const points = [];
+  const { start, end } = (() => {
+    const height = rng(view.b, canvas.height - 200);
+    if (view.small) {
+      const x = lerp(-1, 1, flower_t) * (view.r) * .75; // so they go a little offscreen :D
+      console.log(x);
+      const start = {
+        x: x + 100 * rng(-1, 1),
+        y: view.b,
+      };
+      const end = {
+        x: start.x + 100 * rng(-1, 1),
+        y: view.b - height,
+      };
+      return { start, end };
+    }
+    const x = view.r - 300 - rng(-30, 30);
+    const start = { x: x, y: view.b };
+    const end = {
+      x: x - lerp(-1, 1, flower_t) * 200,
+      y: view.b - height,
+    };
+    return { start, end };
+  })();
+
+  const points = [{ x: start.x, y: start.y + 100, t: -1.0 }];
   const leaves = [];
-
   const n_points = 5;
-  const spread = 200;
-  const height = rng(c.b, canvas.height - 200);
-  const x = c.r - 300 - rng(-30, 30);
 
-  const start = { x: x, y: c.b };
-  const end = {
-    x: x - lerp(-spread, spread, flower_t),
-    y: c.b - height,
-  };
-
+  const dir = { x: end.x - start.x, y: end.y - start.y}
   for (let i = 0; i < n_points; i++) {
     const t = i / (n_points - 1);
     const offset = rng(-t, t) * 50.0;
     points.push({
-      x: start.x + (end.x - start.x) * t + offset,
-      y: start.y + (end.y - start.y) * t,
+      x: start.x + dir.x * t + offset,
+      y: start.y + dir.y * t,
       t,
     });
   }
@@ -315,24 +324,14 @@ function resize() {
   canvas.width = Math.round(canvas.clientWidth * dpr);
   canvas.height = Math.round(canvas.clientHeight * dpr);
 
-  view = {
-    s: view.zoom,
-    w: canvas.width / view.s,
-    h: canvas.height / view.s,
-    l: -view.w / 2,
-    r: view.w / 2,
-    t: -view.h / 2,
-    b: view.h / 2,
-  };
-
-  c = {
-    r: canvas.width * 0.5,
-    b: canvas.height * 0.5,
-    l: -canvas.width * 0.5,
-    t: -canvas.height * 0.5,
-  };
-
-  console.log(view, c);
+  view.s = view.zoom;
+  view.w = canvas.width / view.s;
+  view.h = canvas.height / view.s;
+  view.l = -view.w / 2;
+  view.r = view.w / 2;
+  view.t = -view.h / 2;
+  view.b = view.h / 2;
+  view.small = css_var("small") === "true";
 
   seed = initial_seed;
   generate_flowers();

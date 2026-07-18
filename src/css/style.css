@@ -13,6 +13,7 @@
     --main-width: 600px;
 
     --indent: 1.5rem;
+    --small: false;
 }
 
 * {
@@ -100,6 +101,7 @@ canvas {
     height: 100%;
     z-index: 9999;
     pointer-events: none;
+    margin-top: auto;
 }
 
 .muted {
@@ -117,15 +119,17 @@ canvas {
     padding-left: 1.5rem;
 }
 
-@media (max-width: 700px) {
-    .indent {
+@media (max-width: 500px) {
+    :root {
+        --small: true;
+    }
+    section, .indent {
         padding-left: 0;
     }
     main {
         max-width: unset;
     }
     canvas {
-        height: 20rem;
-        margin-top: auto;
+        height: 20vh;
     }
 }
