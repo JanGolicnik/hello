@@ -177,6 +177,9 @@ canvas {
     canvas {
         height: 20vh;
     }
+    nav {
+        padding: .5rem;
+    }
     #offscreen {
         display: block;
         position: fixed;
