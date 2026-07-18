@@ -96,12 +96,12 @@ a.samepage::before {
 
 canvas {
     position: fixed;
+    bottom: 0;
     inset: 0;
-    width: 100%;
-    height: 100%;
+    width: lvw;
+    height: lvh;
     z-index: 9999;
     pointer-events: none;
-    margin-top: auto;
 }
 
 .muted {
