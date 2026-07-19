@@ -9,10 +9,10 @@
   },
   {
     "id": "gss",
-    "name": "gospod spletna stran",
+    "name": "gospod spletna stran (gss)",
     "repo": "https://github.com/JanGolicnik/gss",
     "description": "static site generator",
-    "tags": ["bun"],
+    "tags": ["bun", "ssg"],
     "favorite": true
   },
   {
@@ -20,7 +20,7 @@
     "name": "blogsoni",
     "repo": "https://github.com/JanGolicnik/rss",
     "description": "public rss feed aggregator",
-    "tags": ["js", "rss"],
+    "tags": ["bun", "js", "rss"],
     "favorite": true
   },
   {

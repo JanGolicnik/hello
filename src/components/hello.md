@@ -1,4 +1,4 @@
-# hello !!
+# hello!!
 
 im jan!
 
@@ -28,9 +28,3 @@ i also run [blogsoni](https://blogsoni.com)
 
 * [email](jan@nejka.net)
 * [github](https://github.com/jangolicnik)
-
-## my stuff
-
-<script &&>
-    return projects.map((p) => `* [${p.name}](#${p.id})`).join("\n");
-</script>

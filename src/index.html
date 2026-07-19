@@ -3,21 +3,17 @@
     {{{ c.head() }}}
     <body>
 
-        {{{ c.nav() }}}
+        <nav>
+            {{{ sections.map(s => `<a class="samesite" href="#${s}">${s}</a>`).join("") }}}
+        </nav>
 
         <main>
-            <markdown>
-                {{{
-                    c.hello() +
-                    c.about() +
-                    c.blog() +
-                    c.experience() +
-                    c.projects()
-                }}}
-            </markdown>
+            <markdown>{{{ sections.map(s => c[s]()).join("") }}}</markdown>
         </main>
 
-        {{{ c.footer() }}}
+        <footer>
+            <p class="muted cute">generated with <a href="#gss">gss</a></p>
+        </footer>
 
         <div id="offscreen"></div>
         {{{ c.plant() }}}
