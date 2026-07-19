@@ -2,7 +2,9 @@
 
 ## work
 
-### game engine developer @ guardiaris  <span class="meta">october 2023 - present</span>
+### game engine developer @ guardiaris 
+
+october 2023 - present
 
 * rendering
 * gameplay 
@@ -14,4 +16,4 @@
 
 ## education
 
-### studying at faculty of computer and information science ljubljana (october 2024 - present)
+### FRI ljubljana (october 2024 - present)

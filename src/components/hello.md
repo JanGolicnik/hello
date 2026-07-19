@@ -26,5 +26,5 @@ i also run [blogsoni](https://blogsoni.com)
 
 ## reach me at
 
-* [email](jan@nejka.net)
+* [email](mailto:jan@nejka.net)
 * [github](https://github.com/jangolicnik)
