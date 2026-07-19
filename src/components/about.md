@@ -4,9 +4,9 @@
 
 favorites are c and javascript,
 
-but i also use c++, c#, rust and python often
+i also use c++, c#, rust and python often
 
-i build my own castles
+building my [mountain](https://youtu.be/443UNeGrFoM?si=TIkmHb2p5LOP_jYW&t=6948) ~
 
 ## interests
 

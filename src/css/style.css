@@ -28,19 +28,21 @@
     --indent: 1.5rem;
     --small: false;
 
-    --font: monospace, monospace;
-    --font-size: 28px;
-    --font-size1: 2rem;
+    --font-mono: monospace, monospace;
+    --font-regular: sans-serif, sans-serif;
+    --font-size: 26px;
+    --font-size-small: .75rem;
+    --font-size1: 1.75rem;
     --font-size2: 1.5rem;
-    --font-size3: 1.3rem;
+    --font-size3: 1.25rem;
     --font-line-height: 150%;
 }
 
 * {
     box-sizing: border-box;
     scroll-margin-top: 5rem;
-    font-family: var(--font);
-    font-size: var(--font-size);
+    font-size: 1em;
+    font-family: var(--font-regular);
     line-height: var(--font-line-height);
 }
 
@@ -56,25 +58,33 @@ body {
     min-height: 100%;
     color: var(--text);
 
-    font-family: var(--normal-font);
-    font-size: var(--normal-font-size);
-    line-height: var(--normal-font-line-height);
+    font-size: var(--font-size);
+}
+
+h1, h2, h3 {
+    font-size: var(--font-size1);
+    margin: 1em 0 0 0;
+    font-family: var(--font-mono);
+}
+
+a {
+    font-family: var(--font-mono);
 }
 
 h1 {
-    margin-bottom: 0;
     font-size: var(--font-size1);
-    margin: 1.5rem 0 0 0;
 }
 
 h2 {
-    font-size: var(--font-size2);
-    margin: 1.5rem 0;
+    font-size: var(--font-size2)
 }
 
 h3 {
-    font-size: var(--font-size3);
-    margin: 1.5rem 0;
+    font-size: var(--font-size3)
+}
+
+h1:first-child {
+    margin: 1.5rem 0 0 0;
 }
 
 section,
@@ -82,16 +92,11 @@ article {
     padding-left: var(--indent);
 }
 
-main,
-div.gap {
+main {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
     width: 100%;
     padding-left: var(--indent);
-}
-
-main {
     max-width: var(--main-width);
     padding-bottom: 10rem;
 }
@@ -123,6 +128,7 @@ nav h3 {
 
 h1::before,
 a.samesite::before {
+    padding-right: .25rem;
     content: "#";
 }
 
@@ -144,7 +150,8 @@ footer {
 
 .muted {
     color: var(--muted);
-    font-size: 1.25rem;
+    font-weight: normal;
+    font-size: var(--font-size-small);
 }
 
 .tags {

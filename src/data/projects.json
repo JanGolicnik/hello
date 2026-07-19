@@ -1,5 +1,13 @@
 [
   {
+    "id": "this",
+    "name": "hello",
+    "repo": "https://github.com/JanGolicnik/hello",
+    "description": "this page",
+    "tags": [":D"],
+    "favorite": true
+  },
+  {
     "id": "picijs",
     "name": "picijs",
     "repo": "https://github.com/JanGolicnik/picijs",
@@ -36,7 +44,7 @@
     "name": "printccy",
     "repo": "https://github.com/JanGolicnik/printccy",
     "description": "printf(\"hello {}\", user)",
-    "tags": ["c"],
+    "tags": ["c", "library"],
     "favorite": true
   },
   {
@@ -44,7 +52,7 @@
     "name": "ripple",
     "repo": "https://github.com/JanGolicnik/ripple",
     "description": "immediate mode ui layout library",
-    "tags": ["c", "ui"],
+    "tags": ["c", "ui", "library"],
     "favorite": true
   },
   {
@@ -67,7 +75,7 @@
     "name": "void-garden",
     "repo": "https://github.com/JanGolicnik/void-garden",
     "description": "procedural plants",
-    "tags": ["rust", "webgpu", "game"],
+    "tags": ["rust", "webgpu", "lsystems"],
     "favorite": true
   },
   {
@@ -82,13 +90,13 @@
     "name": "ant-simulation",
     "repo": "https://github.com/JanGolicnik/ant-simulation",
     "description": "ant simulation that makes for cool visuals",
-    "tags": ["c++", "opengl"]
+    "tags": ["c++", "opengl", "simulation"]
   },
   {
     "id": "terraria-clone",
     "name": "terrariaclone",
     "repo": "https://github.com/JanGolicnik/TerrariaClone",
     "description": "terraria pre-hardmode clone with procedural world generation, items, bosses, liquids..",
-    "tags": ["c++", "opengl"]
+    "tags": ["c++", "opengl", "game"]
   }
 ]

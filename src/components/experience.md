@@ -2,7 +2,7 @@
 
 ## work
 
-### game engine developer at guardiaris (october 2023 - present):
+### game engine developer @ guardiaris  <span class="meta">october 2023 - present</span>
 
 * rendering
 * gameplay 
