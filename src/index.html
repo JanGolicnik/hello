@@ -6,7 +6,15 @@
         {{{ c.nav() }}}
 
         <main>
-            <markdown>{{{ c.hello() + c.about() + c.blog() + c.projects() }}}</markdown>
+            <markdown>
+                {{{
+                    c.hello() +
+                    c.about() +
+                    c.blog() +
+                    c.experience() +
+                    c.projects()
+                }}}
+            </markdown>
         </main>
 
         {{{ c.footer() }}}
