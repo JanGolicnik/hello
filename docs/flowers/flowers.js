@@ -1,8 +1,6 @@
 const canvas = document.querySelector("#flowers");
 const ctx = canvas.getContext("2d");
 
-const n_flowers = 12;
-const n_leaves = 6;
 let flowers_config = [];
 let leaves_config = [];
 let view = { zoom: 1, s: 1, w: 0, h: 0, l: 0, r: 0, t: 0, b: 0 };
@@ -42,16 +40,17 @@ function shuffle(array) {
 }
 
 async function load_svgs() {
-  const load = async (path) => {
-    const txt = await (await fetch(path)).text();
-    const root = new DOMParser().parseFromString(
-      txt,
-      "image/svg+xml",
-    ).documentElement;
-    const marker = root.querySelector("#anchor");
+  const txt = await (await fetch("./flowers/all.svg")).text();
+  const root = new DOMParser().parseFromString(
+    txt,
+    "image/svg+xml",
+  ).documentElement;
+
+  const load = (el) => {
+    const marker = el.querySelector('circle');
     return {
       anchor: { x: marker.getAttribute("cx"), y: marker.getAttribute("cy") },
-      paths: [...root.querySelectorAll("path")].map((p) => {
+      paths: [...el.querySelectorAll("path")].map((p) => {
         return {
           path: new Path2D(p.getAttribute("d")),
           fill: p.getAttribute("fill"),
@@ -60,15 +59,12 @@ async function load_svgs() {
     };
   };
 
-  for (let i = 1; i <= n_flowers; i++) {
-    flowers_config.push({ svg: await load(`./flowers/flower${i}.svg`) });
-  }
-  for (let i = 1; i <= n_leaves; i++) {
-    leaves_config.push({
-      svg: await load(`./flowers/leaf${i}.svg`),
-      nocolor: true,
-    });
-  }
+  flowers_config = [...root.querySelectorAll('[id^="flower"]')].map((e) => {
+    return { svg: load(e) };
+  });
+  leaves_config = [...root.querySelectorAll('[id^="leaf"]')].map((e) => {
+    return { svg: load(e), nocolor: true };
+  });
 }
 
 // modified from: https://gist.github.com/nicholaswmin/c2661eb11cad5671d816
@@ -170,8 +166,7 @@ function flower_render(flower, time, t) {
   ctx.rotate(angle);
   ctx.translate(-flower.origin.x, -flower.origin.y);
 
-  if (!view.small)
-    ctx.globalAlpha = lerp(0.75, 1.0, flower.t);
+  if (!view.small) ctx.globalAlpha = lerp(0.75, 1.0, flower.t);
   ctx.setLineDash([t * flower.len, flower.len]);
   ctx.stroke(flower.path);
   ctx.setLineDash([]);
@@ -222,7 +217,9 @@ function render(time) {
   seed = initial_seed;
   time += rng(0.0, 100.0);
 
-  const target_t = view.small ? 0.95 : clamp(1.0 - mouse.y / canvas.height, 0.4, 0.95);
+  const target_t = view.small
+    ? 0.95
+    : clamp(1.0 - mouse.y / canvas.height, 0.4, 0.95);
   flower_t += (target_t - flower_t) * (1.0 - Math.exp(-dt));
   for (const flower of flowers) {
     flower_render(flower, time, flower_t);
@@ -235,7 +232,7 @@ function flower_generate(config, flower_t) {
   const { start, end } = (() => {
     const height = rng(view.b, canvas.height - 200);
     if (view.small) {
-      const x = lerp(-1, 1, flower_t) * (view.r) * .75; // so they go a little offscreen :D
+      const x = lerp(-1, 1, flower_t) * view.r * 0.75; // so they go a little offscreen :D
       console.log(x);
       const start = {
         x: x + 100 * rng(-1, 1),
@@ -259,7 +256,7 @@ function flower_generate(config, flower_t) {
   const points = [];
   const leaves = [];
   const n_points = 5;
-  const dir = { x: end.x - start.x, y: end.y - start.y}
+  const dir = { x: end.x - start.x, y: end.y - start.y };
   for (let i = 0; i < n_points; i++) {
     const t = i / (n_points - 1);
     const offset = rng(-t, t) * 50.0;

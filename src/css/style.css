@@ -29,7 +29,7 @@
     --small: false;
 
     --font: monospace, monospace;
-    --font-size: 20px;
+    --font-size: 28px;
     --font-size1: 2rem;
     --font-size2: 1.5rem;
     --font-size3: 1.3rem;
@@ -161,6 +161,7 @@ footer {
 @media (max-width: 500px) {
     :root {
         --small: true;
+        --font-size: 20px;
     }
     section,
     article {
