@@ -78,7 +78,7 @@ h3 {
 }
 
 section,
-.indent {
+article {
     padding-left: var(--indent);
 }
 
@@ -122,7 +122,7 @@ nav h3 {
 }
 
 h1::before,
-a.samepage::before {
+a.samesite::before {
     content: "#";
 }
 
@@ -154,10 +154,6 @@ footer {
     align-items: center;
 }
 
-.indent {
-    padding-left: 1.5rem;
-}
-
 #offscreen {
     display: none;
 }
@@ -167,7 +163,7 @@ footer {
         --small: true;
     }
     section,
-    .indent {
+    article {
         padding-left: 0;
     }
     main {

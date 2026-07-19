@@ -6,10 +6,7 @@
         {{{ c.nav() }}}
 
         <main>
-            {{{ c.hello() }}}
-            {{{ c.about() }}}
-            {{{ c.blog() }}}
-            {{{ c.projects() }}}
+            <markdown>{{{ c.hello() + c.about() + c.blog() + c.projects() }}}</markdown>
         </main>
 
         {{{ c.footer() }}}
