@@ -40,7 +40,7 @@ function shuffle(array) {
 }
 
 async function load_svgs() {
-  const txt = await (await fetch("./flowers/all.svg")).text();
+  const txt = await (await fetch("/flowers/all.svg")).text();
   const root = new DOMParser().parseFromString(
     txt,
     "image/svg+xml",
