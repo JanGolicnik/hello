@@ -1,8 +1,7 @@
 # zdravo!!
 
-sem jan
+jaz sem jan,
 
-sem
 <script &>
   const bd = new Date(2004, 9, 18);
   const t = new Date();
