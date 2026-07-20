@@ -3,100 +3,178 @@
     "id": "this",
     "name": "hello",
     "repo": "https://github.com/JanGolicnik/hello",
-    "description": "wow !!",
-    "tags": ["im jan!"],
-    "favorite": true
+    "favorite": true,
+    "en": {
+      "description": "wow !!",
+      "tags": ["im jan!"]
+    },
+    "sl": {
+      "description": "vau !!",
+      "tags": ["to sem jaz!"]
+    }
   },
   {
     "id": "picijs",
     "name": "picijs",
     "repo": "https://github.com/JanGolicnik/picijs",
-    "description": "minimal web framework",
-    "tags": ["bun", "js framework"],
-    "favorite": true
+    "favorite": true,
+    "en": {
+      "description": "minimal web framework",
+      "tags": ["bun", "js framework"]
+    },
+    "sl": {
+      "description": "majhno spletno ogrodje",
+      "tags": ["žemljica", "js ogrodje"]
+    }
   },
   {
     "id": "gss",
     "name": "gospod spletna stran (gss)",
     "repo": "https://github.com/JanGolicnik/gss",
-    "description": "static site generator",
-    "tags": ["bun", "ssg"],
-    "favorite": true
+    "favorite": true,
+    "en": {
+      "description": "static site generator",
+      "tags": ["bun", "ssg"]
+    },
+    "sl": {
+      "description": "generator statičnih strani",
+      "tags": ["žemljica", "gss"]
+    }
   },
   {
     "id": "blogsoni",
     "name": "blogsoni",
     "repo": "https://github.com/JanGolicnik/rss",
-    "description": "public rss feed aggregator",
-    "tags": ["bun", "js", "rss"],
-    "favorite": true
+    "favorite": true,
+    "en": {
+      "description": "public rss feed aggregator",
+      "tags": ["bun", "js", "rss"]
+    },
+    "sl": {
+      "description": "odprt zbiralnik rss",
+      "tags": ["žemljica", "js", "rss"]
+    }
   },
   {
     "id": "10_minutes",
     "name": "10 minutes",
     "repo": "https://mauiewauwie.itch.io/10-minutes",
-    "description": "game made at kontrolerji workshop with a friend",
-    "tags": ["ue5", "game"],
-    "favorite": true
+    "favorite": true,
+    "en": {
+      "description": "game made at kontrolerji workshop with a friend",
+      "tags": ["ue5", "game"]
+    },
+    "sl": {
+      "description": "igra ki sva jo s prijateljem naredila na delavnici kontrolerji",
+      "tags": ["ue5", "igra"]
+    }
   },
   {
     "id": "printccy",
     "name": "printccy",
     "repo": "https://github.com/JanGolicnik/printccy",
-    "description": "printf(\"hello {}\", user)",
-    "tags": ["c", "library"],
-    "favorite": true
+    "favorite": true,
+    "en": {
+      "description": "printf(\"hello {}\", user)",
+      "tags": ["c", "library"]
+    },
+    "sl": {
+      "description": "printf(\"pozdravljen {}\", uporabnik)",
+      "tags": ["c", "knjižnica"]
+    }
   },
   {
     "id": "ripple",
     "name": "ripple",
     "repo": "https://github.com/JanGolicnik/ripple",
-    "description": "immediate mode ui layout library",
-    "tags": ["c", "ui", "library"],
-    "favorite": true
+    "favorite": true,
+    "en": {
+      "description": "immediate mode ui layout library",
+      "tags": ["c", "ui", "library"]
+    },
+    "sl": {
+      "description": "knjižnica za pisanje takojšnih uporabniških vmesnikov",
+      "tags": ["c", "uv", "knjižnica"]
+    }
   },
   {
     "id": "yakuza-tower",
     "name": "yakuza tower",
     "repo": "https://github.com/Duckpedia/Yakuza-Tower",
-    "description": "javascript game made as a group, i made the engine",
-    "tags": ["js", "webgpu", "game"]
+    "en": {
+      "description": "javascript game made as a group, i made the engine",
+      "tags": ["js", "webgpu", "game"]
+    },
+    "sl": {
+      "description": "igra narejena v skupini, jaz sem naredil pogon",
+      "tags": ["js", "webgpu", "igra"]
+    }
   },
   {
     "id": "gardenere",
     "name": "gardenere",
     "repo": "https://github.com/JanGolicnik/Gardenere",
-    "description": "game made for the acerola game jam",
-    "tags": ["rust", "webgpu", "game"],
-    "favorite": true
+    "favorite": true,
+    "en": {
+      "description": "game made for the acerola game jam",
+      "tags": ["rust", "webgpu", "game"]
+    },
+    "sl": {
+      "description": "igra narejena za acerola žur iger",
+      "tags": ["rja", "webgpu", "igra"]
+    }
   },
   {
     "id": "void-garden",
     "name": "void-garden",
     "repo": "https://github.com/JanGolicnik/void-garden",
-    "description": "procedural plants",
-    "tags": ["rust", "webgpu", "lsystems"],
-    "favorite": true
+    "favorite": true,
+    "en": {
+      "description": "procedural plants",
+      "tags": ["rust", "webgpu", "lsystems"]
+    },
+    "sl": {
+      "description": "proceduralne rastline",
+      "tags": ["rja", "webgpu", "l-sistemi"]
+    }
   },
   {
     "id": "cpp-ray-tracer",
     "name": "software ray tracer",
     "repo": "https://github.com/JanGolicnik/CppRayTracerEngine",
-    "description": "cpu ray tracer based on the PBR book",
-    "tags": ["c++"]
+    "en": {
+      "description": "cpu ray tracer based on the PBR book",
+      "tags": ["c++"]
+    },
+    "sl": {
+      "description": "sledilnik žarkom narejen po zgledu PBR knjige",
+      "tags": ["cplusplus"]
+    }
   },
   {
     "id": "ant-simulation",
     "name": "ant-simulation",
     "repo": "https://github.com/JanGolicnik/ant-simulation",
-    "description": "ant simulation that makes for cool visuals",
-    "tags": ["c++", "opengl", "simulation"]
+    "en": {
+      "description": "ant simulation that makes for cool visuals",
+      "tags": ["c++", "opengl", "simulation"]
+    },
+    "sl": {
+      "description": "simulacija mravelj ki izgleda prav lepo",
+      "tags": ["cplusplus", "opengl", "simulacija"]
+    }
   },
   {
     "id": "terraria-clone",
     "name": "terrariaclone",
     "repo": "https://github.com/JanGolicnik/TerrariaClone",
-    "description": "terraria pre-hardmode clone with procedural world generation, items, bosses, liquids..",
-    "tags": ["c++", "opengl", "game"]
+    "en": {
+      "description": "terraria pre-hardmode clone with procedural world generation, items, bosses, liquids..",
+      "tags": ["c++", "opengl", "game"]
+    },
+    "sl": {
+      "description": "klon igre terraria z vecino prehardmode zadevic",
+      "tags": ["cplusplus", "opengl", "igra"]
+    }
   }
 ]

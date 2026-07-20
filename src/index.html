@@ -1,18 +1,19 @@
 <!doctype html>
-<html lang="en">
+<html lang="{{ language }}">
     {{{ c.head() }}}
     <body>
 
         <nav>
-            {{{ sections.map(s => `<a class="samesite" href="#${s}">${s}</a>`).join("") }}}
+            {{{ sections[language].map(s => `<a class="samesite" href="#${s}">${s}</a>`).join("") }}}
+            <a class="margin-left" href="/{{ language === "en" ? "./sl/" : "./"}}">{{ language === "en" ? "sl" : "en"}}</a>
         </nav>
 
         <main>
-            <markdown>{{{ sections.map(s => c[s]()).join("") }}}</markdown>
+            <markdown>{{{ sections.en.map(s => c[`${language}/${s}`]()).join("") }}}</markdown>
         </main>
 
         <footer>
-            <p class="muted cute">generated with <a href="#gss">gss</a></p>
+            <p class="muted cute">{{ language === "en" ? "generated with" : "generirano z"}} <a href="#gss">gss</a></p>
         </footer>
 
         <div id="offscreen"></div>

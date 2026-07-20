@@ -1,1 +1,4 @@
-[ "hello", "about", "blog", "experience", "projects" ]
+{
+  "en": ["hello", "about", "blog", "experience", "projects"],
+  "sl": ["zdravo", "o-meni", "blog", "izkušnje", "projekti"]
+}
