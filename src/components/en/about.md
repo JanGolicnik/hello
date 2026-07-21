@@ -32,11 +32,11 @@ you <3
 
 ### music
 
-fuck off ai music
-
 - [zbrucz](https://open.spotify.com/artist/4GJdaYeAUUwYPMTkBRY7d3)
 - [luzeri](https://open.spotify.com/artist/4LI3oYgU7stmaokd5jw2A0)
 - [ružno pače](https://open.spotify.com/artist/2hcMhYqKVeEbfYRTGCIsv3)
+
+[fuck off ai music](https://fuckoffaimusic.com/)
 
 ### links
 

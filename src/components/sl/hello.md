@@ -22,7 +22,7 @@ zaposlen sem pri guardiaris-u, šolam se na FRI ljubljana
 
 upravljam tudi z [blogsoni](https://blogsoni.com)
 
-## najdite me na
+## kontaktirajte me na
 
 - [mejl](mailto:jan@nejka.net)
 - [github](https://github.com/jangolicnik)

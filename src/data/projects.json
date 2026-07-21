@@ -120,7 +120,7 @@
       "tags": ["rust", "webgpu", "game"]
     },
     "sl": {
-      "description": "igra narejena za acerola žur iger",
+      "description": "igra narejena za acerola marmelado iger",
       "tags": ["rja", "webgpu", "igra"]
     }
   },
@@ -160,7 +160,7 @@
       "tags": ["c++", "opengl", "simulation"]
     },
     "sl": {
-      "description": "simulacija mravelj ki izgleda prav lepo",
+      "description": "simulacija mravelj ki izgleda šekr lepo",
       "tags": ["cplusplus", "opengl", "simulacija"]
     }
   },

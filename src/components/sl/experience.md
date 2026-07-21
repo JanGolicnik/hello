@@ -6,7 +6,7 @@
 
 oktober 2023 - trenutno
 
-* izrisovanje
+* upodabljanje
 * igra 
 * pretakanje videa
 * vgrajeni sistemi 
