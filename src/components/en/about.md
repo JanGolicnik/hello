@@ -1,8 +1,10 @@
 # about
 
-i'm a major blog consumer, i like making stuff myself, quiet technology
+i'm a major blog consumer
 
-[fuck off](https://fuckoffaimusic.com/) ai music
+i like making stuff myself, quiet technology, fsf
+
+member of [fuck off ai music](https://fuckoffaimusic.com/)
 
 ## languages
 

@@ -1,5 +1,7 @@
 # experience
 
+i work mainly in systems and game engine development
+
 ## work
 
 ### game engine developer @ Guardiaris 

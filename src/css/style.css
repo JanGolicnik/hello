@@ -52,7 +52,8 @@
     --font-heading-weight: 400;
     --font-accent-weight: 400;
 
-    --font-line-height: 120%;
+    --font-line-height: 150%;
+    --font-indent: 1rem;
 }
 
 :root[data-theme="light"] {
@@ -78,7 +79,6 @@
     scroll-margin-top: 4rem;
     font-size: 1em;
     font-family: var(--font-regular);
-    line-height: var(--font-line-height);
     transition: 0.3s color ease-out;
     transition: 0.3s background-color ease-out;
     margin: 0;
@@ -143,6 +143,13 @@ article > *:first-child {
 
 p {
     margin: .75rem 0;
+    line-height: var(--font-line-height);
+}
+
+article.h-hello > p:first-of-type, article.h-zdravo > p:first-of-type {
+    font-size: var(--font-size-heading);
+    margin: 1rem 0 .5rem 0;
+    font-family: var(--font-heading);
 }
 
 svg {
@@ -239,12 +246,6 @@ em {
 
 .margin-left {
     margin-left: auto;
-}
-
-article.h-hello > p:first-of-type, article.h-zdravo > p:first-of-type {
-    font-size: var(--font-size-heading);
-    margin: 1rem 0 0.5rem 0;
-    font-family: var(--font-heading);
 }
 
 section.h-recent-favorite {
