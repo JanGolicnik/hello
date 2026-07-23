@@ -1,16 +1,14 @@
 # about
 
-## languages
-
-I love c and javascript, but i also work in c++, c#, rust and python.
-
-Building my [mountain](https://youtu.be/443UNeGrFoM?si=TIkmHb2p5LOP_jYW&t=6948).
-
-## interests
-
-major blog consumer, handmade network, *you <3*.
+i'm a major blog consumer, i like making stuff myself, quiet technology
 
 [fuck off](https://fuckoffaimusic.com/) ai music
+
+## languages
+
+i love c and javascript, but i also work in c++, c#, rust and python.
+
+building my [mountain](https://youtu.be/443UNeGrFoM?si=TIkmHb2p5LOP_jYW&t=6948) ~
 
 ## recent favorite
 

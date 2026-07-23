@@ -2,12 +2,11 @@
 
 ## delo
 
-### razvijalec igralnega pogona @ guardiaris 
+### razvijalec igralnega pogona @ Guardiaris 
 
-oktober 2023 - trenutno
+*oktober 2023 - trenutno*
 
 * upodabljanje
-* igra 
 * pretakanje videa
 * vgrajeni sistemi 
 * obnašanje likov 
@@ -16,6 +15,6 @@ oktober 2023 - trenutno
 
 ## šolanje
 
-### FRI ljubljana 
+### študiram @ FRI ljubljana 
 
-oktober 2024 - trenutno
+*oktober 2024 - trenutno*

@@ -2,21 +2,17 @@
 
 ## programski jeziki
 
-zelo rad imam c in javascript
-
-pogosto pa uporabljam tudi cplusplus, ostri c, rjo in pitona
+zelo rad imam c in javascript, veliko uporabljam tudi cplusplus, ostri c, rjo in pitona.
 
 gradim svojo [goro](https://youtu.be/443UNeGrFoM?si=TIkmHb2p5LOP_jYW&t=6948) ~
 
 ## interesi
 
-veliko berem bloge
+branje blogov, orodja, ti <3
 
-ustvarjanje orodij
+ai glasba, [odjebi](https://fuckoffaimusic.com/)!
 
-ti <3
-
-## trenutno najljubše ...
+## trenutno najljubše
 
 ### mange
 
@@ -35,8 +31,6 @@ ti <3
 - [zbrucz](https://open.spotify.com/artist/4GJdaYeAUUwYPMTkBRY7d3)
 - [Luzerji](https://open.spotify.com/artist/4LI3oYgU7stmaokd5jw2A0)
 - [Grdi raček](https://open.spotify.com/artist/2hcMhYqKVeEbfYRTGCIsv3)
-
-ai glasba, [odjebi](https://fuckoffaimusic.com/) ~
 
 ### povezave
 

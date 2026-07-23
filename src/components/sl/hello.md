@@ -1,6 +1,9 @@
-# zdravo!!
+# zdravo
 
-jaz sem jan,
+Zdravo! Jaz sem Jan!
+
+delam igralne pogone, ukvarjam se tudi z grafičnim programiranjem, simulacijami in ostalimi nizkonivojskimi zadevami.
+trenutno me zelo zanima [neodvisni splet](https://indieweb.org/).
 
 <script &>
   const bd = new Date(2004, 9, 18);
@@ -12,15 +15,10 @@ jaz sem jan,
   )
       age--;
   return age;
-</script>-letni razvijalec igralnih pogonov iz ljubljane
+</script>, iz Ljubljane, Bežigrad
 
-najraje delam z simulacijami, grafičnim programiranjem, nizkonivojskimi zadevami in preseravanjem na spletu
-
-trenutno me zelo zanima neodvisni splet
-
-zaposlen sem pri guardiaris-u, šolam se na FRI ljubljana
-
-upravljam tudi z [blogsoni](https://blogsoni.com)
+zaposlen sem pri Guardiaris-u, šolam se na FRI ljubljana.
+upravljam tudi z [Blogsoni](https://blogsoni.com).
 
 ## kontaktirajte me na
 
