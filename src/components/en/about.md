@@ -2,21 +2,17 @@
 
 ## languages
 
-favorites are c and javascript,
+I love c and javascript, but i also work in c++, c#, rust and python.
 
-i also use c++, c#, rust and python often
-
-building my [mountain](https://youtu.be/443UNeGrFoM?si=TIkmHb2p5LOP_jYW&t=6948) ~
+Building my [mountain](https://youtu.be/443UNeGrFoM?si=TIkmHb2p5LOP_jYW&t=6948).
 
 ## interests
 
-major blog consumer
+major blog consumer, handmade network, *you <3*.
 
-building my own stuff
+[fuck off](https://fuckoffaimusic.com/) ai music
 
-you <3
-
-## recent favorite ...
+## recent favorite
 
 ### manga
 
@@ -35,8 +31,6 @@ you <3
 - [zbrucz](https://open.spotify.com/artist/4GJdaYeAUUwYPMTkBRY7d3)
 - [luzeri](https://open.spotify.com/artist/4LI3oYgU7stmaokd5jw2A0)
 - [ružno pače](https://open.spotify.com/artist/2hcMhYqKVeEbfYRTGCIsv3)
-
-[fuck off ai music](https://fuckoffaimusic.com/)
 
 ### links
 

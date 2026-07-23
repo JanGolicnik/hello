@@ -2,9 +2,9 @@
 
 ## work
 
-### game engine developer @ guardiaris 
+### game engine developer @ Guardiaris 
 
-october 2023 - present
+*october 2023 - present*
 
 * rendering
 * gameplay 
@@ -16,4 +16,6 @@ october 2023 - present
 
 ## education
 
-### FRI ljubljana (october 2024 - present)
+### studying @ FRI ljubljana 
+
+*october 2024 - present*

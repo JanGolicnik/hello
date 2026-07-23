@@ -14,28 +14,63 @@
 }
 
 :root {
-    --bg: #1d2324;
-    --text: #dfe8e8;
-    --muted: #8e9596;
-    --link: #f0784c;
-    --link-hover: #f0784cc0;
+    color-scheme: dark;
 
-    --flower: #F55C3D;
+    --bg: #19292b;
+    --text: #f5f2f0;
+    --muted: #8e9596;
+    --muted2: #8e959630;
+    --link: #ff692e;
+    --link-hover: var(--link);
+
+    --flower: var(--link);
     --flower-line: var(--text);
-    --flower-ground: var(--text);
+    --flower-ground: var(--bg);
+    --flower-ground-border: var(--text);
+
+    --display-light: none;
+    --display-dark: initial;
 
     --main-width: 900px;
     --indent: 1.5rem;
     --small: false;
 
-    --font-mono: monospace, monospace;
-    --font-regular: sans-serif;
-    --font-size: 26px;
+    --font-heading: serif;
+    --font-regular: inter, sans-serif;
+    --font-accent: monospace;
+
+    --font-size: 20px;
+
+    --font-size-heading: 2rem;
+    --font-size-h1: 0.85rem;
+    --font-size-h2: 1.25rem;
+    --font-size-h3: 1.125rem;
     --font-size-small: 0.75rem;
-    --font-size1: 1.75rem;
-    --font-size2: 1.25rem;
-    --font-size3: 1.125rem;
-    --font-line-height: 150%;
+    --font-size-accent: 1em;
+
+    --font-weight: 400;
+    --font-heading-weight: 400;
+    --font-accent-weight: 400;
+
+    --font-line-height: 120%;
+}
+
+:root[data-theme="light"] {
+    color-scheme: light;
+
+    --bg: #f5ebe4;
+    --text: #003c4d;
+    --muted: #003c4dc0;
+    --muted2: #003c4d30;
+    --link: #ff5745;
+
+    --flower-ground: var(--text);
+    --flower-ground-border: var(--text);
+
+    --display-light: initial;
+    --display-dark: none;
+
+    --font-accent-weight: 400;
 }
 
 * {
@@ -44,6 +79,8 @@
     font-size: 1em;
     font-family: var(--font-regular);
     line-height: var(--font-line-height);
+    transition: 0.3s color ease-out;
+    transition: 0.3s background-color ease-out;
 }
 
 html {
@@ -61,35 +98,6 @@ body {
     font-size: var(--font-size);
 }
 
-h1,
-h2,
-h3 {
-    font-size: var(--font-size1);
-    margin: 1em 0 0 0;
-    font-family: var(--font-mono);
-}
-
-h1 scroll{
-    font-size: var(--font-size1);
-}
-
-h2 {
-    font-size: var(--font-size2);
-}
-
-h3 {
-    font-size: var(--font-size3);
-}
-
-h1:first-child {
-    margin: 1.5rem 0 0 0;
-}
-
-section,
-article {
-    padding-left: var(--indent);
-}
-
 main {
     display: flex;
     flex-direction: column;
@@ -97,18 +105,74 @@ main {
     padding-left: var(--indent);
     max-width: var(--main-width);
     padding-bottom: 10rem;
+    gap: 1rem;
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--font-heading);
+    font-weight: var(--font-heading-weight);
+}
+
+h1 {
+    font-size: var(--font-size-h1);
+    font-family: var(--font-accent);
+    color: var(--muted);
+    border-bottom: 1px solid var(--muted2);
+    font-weight: normal;
+    width: 100%;
+    padding: 0.25rem 0;
+}
+
+h2 {
+    font-size: var(--font-size-h2);
+}
+
+h3 {
+    font-size: var(--font-size-h3);
+}
+
+svg {
+    width: 1em;
+    height: 1em;
+    min-width: 1em;
+    max-width: 1em;
+    padding: 0;
+    margin: 0;
+    vertical-align: middle;
+    display: inline-block;
+    fill: var(--text);
+}
+
+.dark-only {
+    display: var(--display-dark);
+}
+
+.light-only {
+    display: var(--display-light);
+}
+
+article:first-child {
+    margin: 1.5rem 0 0 0;
+}
+
+section section {
+    padding-left: var(--indent);
 }
 
 a {
     color: var(--link);
-    text-decoration: none;
-    font-family: var(--font-mono);
-    font-weight: bolder;
+    text-decoration: underline solid;
+    font-family: var(--font-accent);
+    font-size: var(--font-size-accent);
+    font-weight: var(--font-accent-weight);
+    cursor: pointer;
 }
 
 a:hover {
     color: var(--link-hover);
-    text-decoration: underline;
+    text-decoration: underline wavy;
 }
 
 nav {
@@ -116,13 +180,12 @@ nav {
     top: 0;
     display: flex;
     flex-direction: row;
-    gap: 2rem;
-    padding: .5rem 1.5rem .5rem 1.5rem;
-    background-color: var(--text);
+    gap: 1.5rem;
+    padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+    background-color: var(--bg);
     border-bottom: 6px solid var(--link);
 }
 
-h1::before,
 a.samesite::before {
     padding-right: 0.25rem;
     content: "#";
@@ -144,7 +207,8 @@ footer {
     padding-left: 1rem;
 }
 
-.muted {
+.muted,
+em {
     color: var(--muted);
     font-weight: normal;
     font-size: var(--font-size-small);
@@ -162,7 +226,66 @@ footer {
 }
 
 .margin-left {
-    margin-left:auto;
+    margin-left: auto;
+}
+
+article,
+section {
+    margin-top: 1.5rem;
+}
+
+article.h-hello > p:first-of-type {
+    font-size: var(--font-size-heading);
+    margin: 1rem 0 0.5rem 0;
+    font-family: var(--font-heading);
+}
+
+section.h-recent-favorite {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+section.h-recent-favorite > *:first-child {
+    flex: 0 0 100%;
+    margin: 0;
+}
+
+section.h-recent-favorite > section {
+    padding: 0;
+    margin: 0;
+    flex: 1 1 10rem;
+    min-width: 0;
+}
+
+section.h-recent-favorite > section > * {
+    margin: 0 0 0.5rem 0;
+    padding: 0;
+    list-style: none;
+}
+
+article.h-projects {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+article.h-projects > *:first-child {
+    flex: 0 0 100%;
+    margin: 0;
+}
+
+article.h-projects section {
+    flex: 0 1 10rem;
+    margin: 0;
+    padding: 0;
+}
+
+article.h-projects section * {
+    margin: 0.25rem 0 0 0;
+    padding: 0;
 }
 
 @media (max-width: 500px) {
@@ -179,14 +302,15 @@ footer {
         padding-left: 1rem;
         padding-right: 1rem;
     }
-    canvas {
-        height: 20vh;
-    }
     nav {
         padding: 0.5rem;
         flex-wrap: wrap;
         gap: 0 1.5rem;
         font-size: 1rem;
+    }
+    canvas {
+        height: 20vh;
+        margin-bottom: 5px;
     }
     #offscreen {
         display: block;
@@ -195,5 +319,6 @@ footer {
         bottom: -40px;
         width: 100%;
         background-color: var(--flower-ground);
+        border-top: 5px solid var(--flower-ground-border);
     }
 }

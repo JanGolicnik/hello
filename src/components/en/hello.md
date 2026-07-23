@@ -1,8 +1,10 @@
-# hello!!
+# hello
 
-im jan!
+Hi! I'm Jan!
 
-im a
+i do game engines, graphics programming, simulation and other low level stuff. right now I'm really into the indie web and all the cool stuff around it.
+
+i'm
 <script &>
   const bd = new Date(2004, 9, 18);
   const t = new Date();
@@ -13,18 +15,11 @@ im a
   )
       age--;
   return age;
-</script>
-year old game engine developer from ljubljana, slovenia
+</script>, from Ljubljana, Slovenia.
 
-i love doing simulation, graphics programming, low level stuff and messing around on the web
-
-right now im really interested in the indie web and all the cool stuff around it
-
-employed at guardiaris and studying at FRI ljubljana
-
-i also run [blogsoni](https://blogsoni.com)
+employed at Guardiaris and studying at FRI ljubljana. i also run [Blogsoni](https://blogsoni.com).
 
 ## reach me at
 
-* [email](mailto:jan@nejka.net)
-* [github](https://github.com/jangolicnik)
+- [email](mailto:jan@nejka.net)
+- [github](https://github.com/jangolicnik)
