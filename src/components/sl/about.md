@@ -1,18 +1,18 @@
-# o meni
+# o meni %% about
+
+veliko berem bloge
+
+rad ustvarjam svoje stvari, vsec mi je tiha tehnologija, fsf
+
+sem del [ai glasba, odjebi](https://fuckoffaimusic.com/)!
 
 ## programski jeziki
 
-zelo rad imam c in javascript, veliko uporabljam tudi cplusplus, ostri c, rjo in pitona.
+zelo rad imam c in javascript, delam pa tudi z cplusplus, ostrim c, rjo in pitonom.
 
 gradim svojo [goro](https://youtu.be/443UNeGrFoM?si=TIkmHb2p5LOP_jYW&t=6948) ~
 
-## interesi
-
-branje blogov, orodja, ti <3
-
-ai glasba, [odjebi](https://fuckoffaimusic.com/)!
-
-## trenutno najljubše
+## trenutno najljubše %% favorites
 
 ### mange
 

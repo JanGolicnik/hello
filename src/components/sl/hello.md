@@ -1,4 +1,4 @@
-# zdravo
+# zdravo %% hello
 
 Zdravo! Jaz sem Jan!
 
@@ -15,7 +15,7 @@ trenutno me zelo zanima [neodvisni splet](https://indieweb.org/).
   )
       age--;
   return age;
-</script>, iz Ljubljane, Bežigrad
+</script>, iz Ljubljane, trenutno v Bežigradu
 
 zaposlen sem pri Guardiaris-u, šolam se na FRI ljubljana.
 upravljam tudi z [Blogsoni](https://blogsoni.com).

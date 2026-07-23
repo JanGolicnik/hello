@@ -1,4 +1,4 @@
-# about
+# about %% about
 
 i'm a major blog consumer
 
@@ -12,7 +12,7 @@ i love c and javascript, but i also work in c++, c#, rust and python.
 
 building my [mountain](https://youtu.be/443UNeGrFoM?si=TIkmHb2p5LOP_jYW&t=6948) ~
 
-## recent favorite
+## recent favorite %% favorites
 
 ### manga
 

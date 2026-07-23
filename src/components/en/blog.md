@@ -1,3 +1,3 @@
-# blog
+# blog %% blog
 
 coming soon...
