@@ -1,3 +1,3 @@
-# projekti asdasdasd %% projects
+# projekti %% projects
 
 {{{ c.projects() }}}
