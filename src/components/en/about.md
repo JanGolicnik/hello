@@ -6,6 +6,8 @@ i like making stuff myself, quiet technology, fsf
 
 member of [fuck off ai music](https://fuckoffaimusic.com/)
 
+currently working on [flos](https://github.com/JanGolicnik/flos)
+
 ## languages
 
 i love c and javascript, but i also work in c++, c#, rust and python.

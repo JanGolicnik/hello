@@ -6,6 +6,8 @@ rad ustvarjam svoje stvari, vsec mi je tiha tehnologija, fsf
 
 sem del [ai glasba, odjebi](https://fuckoffaimusic.com/)!
 
+trenutno delam na [flos](https://github.com/JanGolicnik/flos)
+
 ## programski jeziki
 
 zelo rad imam c in javascript, delam pa tudi z cplusplus, ostrim c, rjo in pitonom.
