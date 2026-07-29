@@ -8,7 +8,7 @@
 
 ## movies
 
-- [Chugking express 1994](https://www.imdb.com/title/tt0109424/)
+- [Chungking express 1994](https://www.imdb.com/title/tt0109424/)
 - [Fallen angels 1995](https://www.imdb.com/title/tt0112913/)
 - [Kneecap 2024](https://www.imdb.com/title/tt27367464/)
 

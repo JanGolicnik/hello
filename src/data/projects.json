@@ -75,7 +75,7 @@
     "repo": "https://github.com/JanGolicnik/printccy",
     "favorite": true,
     "en": {
-      "description": "header only library full of macro magic to achieve type safe printing in c, its a bit of mess but i use it in every project",
+      "description": "header only library full of macro magic to achieve type safe printing in c, a bit of mess but i use it in every project",
       "tags": ["c", "library"]
     },
     "sl": {
@@ -89,7 +89,7 @@
     "repo": "https://github.com/JanGolicnik/ripple",
     "favorite": true,
     "en": {
-      "description": "a ui layout library inspired by clay, its due for a rewrite but i still use it all the time",
+      "description": "a ui layout library inspired by clay, due for a rewrite but i still use it all the time",
       "tags": ["c", "ui", "library"]
     },
     "sl": {
@@ -102,7 +102,7 @@
     "name": "yakuza tower",
     "repo": "https://github.com/Duckpedia/Yakuza-Tower",
     "en": {
-      "description": "javascript game made as a group, i made the engine with a solid pbr deferred rendering pipeline",
+      "description": "javascript game made as a group, i made the engine and a pbr deferred rendering pipeline",
       "tags": ["js", "webgpu", "game"]
     },
     "sl": {
@@ -156,11 +156,11 @@
     "name": "ant-simulation",
     "repo": "https://github.com/JanGolicnik/ant-simulation",
     "en": {
-      "description": "a gpu accelerated ant simulation that makes for really cool visuals",
+      "description": "a gpu accelerated ant simulation",
       "tags": ["c++", "opengl", "simulation"]
     },
     "sl": {
-      "description": "simulacija mravelj na grafični kartici ki naredi zelo kul slike",
+      "description": "simulacija mravelj na grafični kartici",
       "tags": ["cplusplus", "opengl", "simulacija"]
     }
   },

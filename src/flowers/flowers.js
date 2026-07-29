@@ -1,5 +1,4 @@
 const canvas = document.querySelector("#flowers");
-const main = document.querySelector("main");
 const ctx = canvas.getContext("2d");
 
 let flowers_config = [];
@@ -245,8 +244,7 @@ function flower_generate(config, flower_t) {
       };
       return { start, end };
     }
-    const main_rect = main.getBoundingClientRect();
-    const x = (main_rect.left + main_rect.right) * 0.5 + rng(-30, 30);
+    const x = view.r - 300 + rng(-30, 30);
     const start = { x: x, y: view.b };
     const end = {
       x: x - lerp(-1, 1, flower_t) * 200,

@@ -1,8 +1,8 @@
 # zdravo %% hello
 
-Zdravo! Jaz sem Jan!
+Zdravo, jaz sem Jan.
 
-delam igralne pogone in pišem programe za risanje lepih slikic.
+Delam igralne in izrisovalne pogone, včasih se pa vmes pojavi kakšna proceduralna roža.
 
 <script &>
   const bd = new Date(2004, 9, 18);
@@ -14,11 +14,12 @@ delam igralne pogone in pišem programe za risanje lepih slikic.
   )
       age--;
   return age;
-</script>, iz Ljubljane, trenutno v Bežigradu
-govorim slovensko in angleško.
+</script>, iz Ljubljane, trenutno v Bežigradu.
 
-zaposlen sem pri Guardiaris-u, šolam se na FRI ljubljana.
-upravljam tudi z [Blogsoni](https://blogsoni.com).
+Razvijalec igralnih pogonov pri Guardiaris-u, šolam se na FRI ljubljana,
+drugače me pa lahko najdete ko odkrivam toplo vodo v C-ju.
+
+Upravljam tudi z [Blogsoni](https://blogsoni.com).
 
 ## kontaktirajte me na
 
