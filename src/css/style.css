@@ -310,10 +310,6 @@ nav > svg {
     display: none;
 }
 
-nav > div {
-    display: block;
-}
-
 @media (max-width: 500px) {
     :root {
         --small: true;
@@ -348,9 +344,5 @@ nav > div {
 
     nav > svg {
         display: inline-block;
-    }
-
-    nav > div {
-        display: none;
     }
 }

@@ -306,6 +306,14 @@ em {
     padding: 0;
 }
 
+nav > svg {
+    display: none;
+}
+
+nav > div {
+    display: block;
+}
+
 @media (max-width: 500px) {
     :root {
         --small: true;
@@ -316,12 +324,6 @@ em {
         max-width: unset;
         padding-left: 1rem;
         padding-right: 1rem;
-    }
-    nav {
-        padding: 0.5rem;
-        flex-wrap: wrap;
-        gap: 0 1.5rem;
-        font-size: 1rem;
     }
     canvas {
         height: 20vh;
@@ -335,5 +337,20 @@ em {
         width: 100%;
         background-color: var(--flower-ground);
         border-top: 5px solid var(--flower-ground-border);
+    }
+
+    nav {
+    }
+
+    nav > svg {
+        display: inline-block;
+    }
+
+    nav > div {
+        padding: 0.5rem;
+        flex-wrap: wrap;
+        gap: 0 1.5rem;
+        font-size: 1rem;
+        display: none;
     }
 }
