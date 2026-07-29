@@ -306,12 +306,12 @@ em {
     padding: 0;
 }
 
-nav > svg {
+nav label, nav input {
     display: none;
 }
 
 nav > div {
-    display: block;
+    margin-left: auto;
 }
 
 @media (max-width: 500px) {
@@ -340,17 +340,54 @@ nav > div {
     }
 
     nav {
+        display: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 0.5rem;
+        gap: .25rem;
+    }
+
+    nav > div > * {
+        margin-right: 1rem;
+    }
+
+    nav label, nav input {
+        display: inline-block;
     }
 
     nav > svg {
         display: inline-block;
+        width: 1em;
+        height: 1em;
+        min-width: 1rem;
+        max-width: 1em;
     }
 
-    nav > div {
-        padding: 0.5rem;
-        flex-wrap: wrap;
-        gap: 0 1.5rem;
-        font-size: 1rem;
+    nav > a {
+        flex: 0 1 calc(50% - 1rem);
         display: none;
     }
+
+    nav input:checked~* {
+        display: inline-block;
+    }
+
+    nav input {
+        display: none;
+    }
+
+    nav input:hover {
+        cursor: pointer;
+    }
+
+    nav > a#theme {
+        margin-left: 0;
+    }
+    nav > label {
+        flex: 0 0 60%;
+    }
+
 }
