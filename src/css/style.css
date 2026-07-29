@@ -309,11 +309,8 @@ em {
 @media (max-width: 500px) {
     :root {
         --small: true;
-        --font-size: 20px;
-    }
-    section,
-    article {
-        padding-left: 0;
+        --font-size: 16px;
+        --indent: 0;
     }
     main {
         max-width: unset;
