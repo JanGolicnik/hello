@@ -2,8 +2,7 @@
 
 Zdravo! Jaz sem Jan!
 
-delam igralne pogone, ukvarjam se tudi z grafičnim programiranjem, simulacijami in ostalimi nizkonivojskimi zadevami.
-trenutno me zelo zanima [neodvisni splet](https://indieweb.org/).
+delam igralne pogone in pišem programe za risanje lepih slikic.
 
 <script &>
   const bd = new Date(2004, 9, 18);
@@ -16,6 +15,7 @@ trenutno me zelo zanima [neodvisni splet](https://indieweb.org/).
       age--;
   return age;
 </script>, iz Ljubljane, trenutno v Bežigradu
+govorim slovensko in angleško.
 
 zaposlen sem pri Guardiaris-u, šolam se na FRI ljubljana.
 upravljam tudi z [Blogsoni](https://blogsoni.com).

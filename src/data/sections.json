@@ -1,4 +1,4 @@
 {
-  "en": ["hello", "about", "blog", "experience", "projects"],
-  "sl": ["zdravo", "o-meni", "blog", "izkušnje", "projekti"]
+  "en": ["hello", "about", "experience", "favorite", "blog", "projects"],
+  "sl": ["zdravo", "o-meni", "izkušnje", "favorite", "blog", "projekti"]
 }

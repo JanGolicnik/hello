@@ -1,41 +1,23 @@
 # about %% about
 
-i'm a major blog consumer
-
-i like making stuff myself, quiet technology, fsf
+i really really like programming and reading other peoples tech blogs, especially if its about stuff they've made themselves.
+reinventing the wheel and building my [mountain](https://youtu.be/443UNeGrFoM?si=TIkmHb2p5LOP_jYW&t=6948) is also exactly my favorite part about programming.
 
 member of [fuck off ai music](https://fuckoffaimusic.com/)
 
-currently working on [flos](https://github.com/JanGolicnik/flos)
+right now im running PopOS! and zed with vim bindings. id love to try nix.
 
-## languages
+## code
 
-i love c and javascript, but i also work in c++, c#, rust and python.
+C boy, but i also use Javascript a bunch. otherwise im experienced in C++, C# and Rust from my day job and other projects.
 
-building my [mountain](https://youtu.be/443UNeGrFoM?si=TIkmHb2p5LOP_jYW&t=6948) ~
+hope to use Go and Zig in the near future, they seem really cool.
 
-## recent favorite %% favorites
+im really into [free](https://www.fsf.org/), [independant](https://indieweb.org/) and [simple](https://pointersgonewild.com/2018/02/18/minimalism-in-programming/) software. i believe stuff should be open source and accessible to everyone.
 
-### manga
+working on [flos](https://github.com/JanGolicnik/flos), a cute little game about collecting flowers written in C.
 
-- [Sensou Kyoushitsu](https://myanimelist.net/manga/147585/Sensou_Kyoushitsu)
-- [Tower dungeon](https://myanimelist.net/manga/163232/Tower_Dungeon)
-- [Blame!](https://myanimelist.net/manga/149/Blame)
-
-### movies
-
-- [Chugking express 1994](https://www.imdb.com/title/tt0109424/)
-- [Fallen angels 1995](https://www.imdb.com/title/tt0112913/)
-- [Kneecap 2024](https://www.imdb.com/title/tt27367464/)
-
-### music
-
-- [zbrucz](https://open.spotify.com/artist/4GJdaYeAUUwYPMTkBRY7d3)
-- [luzeri](https://open.spotify.com/artist/4LI3oYgU7stmaokd5jw2A0)
-- [ružno pače](https://open.spotify.com/artist/2hcMhYqKVeEbfYRTGCIsv3)
-
-### links
-
-- [Safe visual design rules](https://anthonyhobday.com/sideprojects/saferules/)
-- [Designed to Last](https://jeffhuang.com/designed_to_last/)
-- [I Nearly Died Drowning](https://longreads.com/2024/04/02/i-nearly-died-drowning-maggie-slepian/)
+### project wishlist:
+- rewrite my js framework in go
+- virtual geometry on the web
+- a library for procedural plants

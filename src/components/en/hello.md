@@ -2,7 +2,7 @@
 
 Hi! I'm Jan!
 
-i do game engines, graphics programming, simulation and other low level stuff. right now I'm really into the [indie web](https://indieweb.org/) and all the cool stuff around it.
+i do game engines, graphics programming, simulation and other low level stuff.
 
 i'm
 <script &>
@@ -16,6 +16,7 @@ i'm
       age--;
   return age;
 </script>, from Ljubljana, Slovenia.
+i speak english and slovenian.
 
 employed at Guardiaris and studying at FRI ljubljana. i also run [Blogsoni](https://blogsoni.com).
 

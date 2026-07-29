@@ -5,11 +5,11 @@
     "repo": "https://github.com/JanGolicnik/hello",
     "favorite": true,
     "en": {
-      "description": "wow !!",
+      "description": "my personal site, hopefully it'll serve as my main online presence one day",
       "tags": ["im jan!"]
     },
     "sl": {
-      "description": "vau !!",
+      "description": "moja osebna stran, upam da bo nekoč to moj glaven štab na spletu",
       "tags": ["to sem jaz!"]
     }
   },
@@ -19,11 +19,11 @@
     "repo": "https://github.com/JanGolicnik/picijs",
     "favorite": true,
     "en": {
-      "description": "minimal web framework",
+      "description": "a minimal web framework that runs this site and blogsoni",
       "tags": ["bun", "js framework"]
     },
     "sl": {
-      "description": "majhno spletno ogrodje",
+      "description": "majhno spletno ogrodje s katerim laufam to spletno stran in blogsone",
       "tags": ["žemljica", "js ogrodje"]
     }
   },
@@ -33,11 +33,11 @@
     "repo": "https://github.com/JanGolicnik/gss",
     "favorite": true,
     "en": {
-      "description": "static site generator",
+      "description": "static site generator that supports templates, components and markdown",
       "tags": ["bun", "ssg"]
     },
     "sl": {
-      "description": "generator statičnih strani",
+      "description": "generator statičnih spletnih strani ki podpira template, komponente in markdown",
       "tags": ["žemljica", "gss"]
     }
   },
@@ -47,11 +47,11 @@
     "repo": "https://github.com/JanGolicnik/rss",
     "favorite": true,
     "en": {
-      "description": "public rss feed aggregator",
+      "description": "rss feed aggregator cause the orange site sucks and lobsters is dead",
       "tags": ["bun", "js", "rss"]
     },
     "sl": {
-      "description": "odprt zbiralnik rss",
+      "description": "zbiralnik rss ker je oranžna stran zanič, lobsters pa umira",
       "tags": ["žemljica", "js", "rss"]
     }
   },
@@ -61,11 +61,11 @@
     "repo": "https://mauiewauwie.itch.io/10-minutes",
     "favorite": true,
     "en": {
-      "description": "game made at kontrolerji workshop with a friend",
+      "description": "a game me and a friend made at kontrolerji workshop, you should play it !",
       "tags": ["ue5", "game"]
     },
     "sl": {
-      "description": "igra ki sva jo s prijateljem naredila na delavnici kontrolerji",
+      "description": "igra ki sva jo s prijateljem naredila na delavnici kontrolerji, probajte jo !",
       "tags": ["ue5", "igra"]
     }
   },
@@ -75,11 +75,11 @@
     "repo": "https://github.com/JanGolicnik/printccy",
     "favorite": true,
     "en": {
-      "description": "printf(\"hello {}\", user)",
+      "description": "header only library full of macro magic to achieve type safe printing in c, its a bit of mess but i use it in every project",
       "tags": ["c", "library"]
     },
     "sl": {
-      "description": "printf(\"pozdravljen {}\", uporabnik)",
+      "description": "c knjižnica ki vsebuje makro magijo za varno printanje v cju, trenutno je malo razmetana ampak jo uporabljam čisto povsod",
       "tags": ["c", "knjižnica"]
     }
   },
@@ -89,11 +89,11 @@
     "repo": "https://github.com/JanGolicnik/ripple",
     "favorite": true,
     "en": {
-      "description": "immediate mode ui layout library",
+      "description": "a ui layout library inspired by clay, its due for a rewrite but i still use it all the time",
       "tags": ["c", "ui", "library"]
     },
     "sl": {
-      "description": "knjižnica za pisanje takojšnih uporabniških vmesnikov",
+      "description": "knjižnica za pisanje uporabniših vmesnikov, moram se jo spravit izboljšat, a jo vseeno upraobljam povsod",
       "tags": ["c", "uv", "knjižnica"]
     }
   },
@@ -102,11 +102,11 @@
     "name": "yakuza tower",
     "repo": "https://github.com/Duckpedia/Yakuza-Tower",
     "en": {
-      "description": "javascript game made as a group, i made the engine",
+      "description": "javascript game made as a group, i made the engine with a solid pbr deferred rendering pipeline",
       "tags": ["js", "webgpu", "game"]
     },
     "sl": {
-      "description": "igra narejena v skupini, jaz sem naredil pogon",
+      "description": "igra ki smo jo naredili z kolegi, jaz sem naredil pogon",
       "tags": ["js", "webgpu", "igra"]
     }
   },
@@ -116,11 +116,11 @@
     "repo": "https://github.com/JanGolicnik/Gardenere",
     "favorite": true,
     "en": {
-      "description": "game made for the acerola game jam",
+      "description": "game made for the acerola game jam about growing a flower that eventually consumes you",
       "tags": ["rust", "webgpu", "game"]
     },
     "sl": {
-      "description": "igra narejena za acerola marmelado iger",
+      "description": "igra v kateri skrbiš za rožo z nekaj krvi, narejena za acerola marmelado iger",
       "tags": ["rja", "webgpu", "igra"]
     }
   },
@@ -130,11 +130,11 @@
     "repo": "https://github.com/JanGolicnik/void-garden",
     "favorite": true,
     "en": {
-      "description": "procedural plants",
+      "description": "lets you explore an infinite garden filled with procedurally generated trees",
       "tags": ["rust", "webgpu", "lsystems"]
     },
     "sl": {
-      "description": "proceduralne rastline",
+      "description": "raziskuj proceduralen vrt",
       "tags": ["rja", "webgpu", "l-sistemi"]
     }
   },
@@ -143,7 +143,7 @@
     "name": "software ray tracer",
     "repo": "https://github.com/JanGolicnik/CppRayTracerEngine",
     "en": {
-      "description": "cpu ray tracer based on the PBR book",
+      "description": "a cpu ray tracer i wrote following the PBR book",
       "tags": ["c++"]
     },
     "sl": {
@@ -156,11 +156,11 @@
     "name": "ant-simulation",
     "repo": "https://github.com/JanGolicnik/ant-simulation",
     "en": {
-      "description": "ant simulation that makes for cool visuals",
+      "description": "a gpu accelerated ant simulation that makes for really cool visuals",
       "tags": ["c++", "opengl", "simulation"]
     },
     "sl": {
-      "description": "simulacija mravelj ki izgleda šekr lepo",
+      "description": "simulacija mravelj na grafični kartici ki naredi zelo kul slike",
       "tags": ["cplusplus", "opengl", "simulacija"]
     }
   },

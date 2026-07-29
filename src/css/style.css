@@ -31,7 +31,7 @@
     --display-light: none;
     --display-dark: initial;
 
-    --main-width: 900px;
+    --main-width: 1100px;
     --indent: 1.5rem;
     --small: false;
 
@@ -39,12 +39,12 @@
     --font-regular: inter, sans-serif;
     --font-accent: monospace;
 
-    --font-size: 20px;
+    --font-size: 24px;
 
     --font-size-heading: 2rem;
     --font-size-h1: 0.85rem;
-    --font-size-h2: 1.25rem;
-    --font-size-h3: 1.125rem;
+    --font-size-h2: 1.5rem;
+    --font-size-h3: 1.25rem;
     --font-size-small: 0.75rem;
     --font-size-accent: 1em;
 
@@ -107,24 +107,23 @@ main {
     padding-left: var(--indent);
     max-width: var(--main-width);
     padding-bottom: 10rem;
-    gap: 1rem;
+    gap: 3rem;
 }
 
 h1,
 h2,
 h3 {
-    font-family: var(--font-heading);
-    font-weight: var(--font-heading-weight);
+    font-family: var(--font-regular);
+    font-weight: 400;
 }
 
 h1 {
     font-size: var(--font-size-h1);
-    font-family: var(--font-accent);
     color: var(--muted);
     border-bottom: 1px solid var(--muted2);
     font-weight: normal;
     width: 100%;
-    padding: 0 0 .25rem 0;
+    padding: 0 0rem .25rem 0;
 }
 
 h2 {
@@ -180,7 +179,7 @@ article:first-child {
     margin: 1.5rem 0 0 0;
 }
 
-section section {
+section > *:not(:first-child) {
     padding-left: var(--indent);
 }
 
@@ -252,32 +251,35 @@ em {
     margin-left: auto;
 }
 
-#h-favorites {
+#h-favorite {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 1rem;
 }
 
-#h-favorites > *:first-child {
+#h-favorite > *:first-child {
     flex: 0 0 100%;
     margin-bottom: 0;
 }
 
-#h-favorites > section {
+#h-favorite > section {
     padding: 0;
     margin: 0;
-    flex: 1 1 10rem;
     min-width: 0;
 }
 
-#h-favorites > section > * {
+#h-favorite section {
+    flex: 0 1 calc(50% - 1rem);
+}
+
+#h-favorite > section > * {
     margin: 0 0 0.5rem 0;
     padding: 0;
     list-style: none;
 }
 
-#h-favorites > section li {
+#h-favorite > section li {
     margin: 0 0 0.25rem 0;
 }
 
@@ -294,7 +296,7 @@ em {
 }
 
 #h-projects section {
-    flex: 0 1 10rem;
+    flex: 0 1 calc(50% - 1rem);
     margin: 0;
     padding: 0;
 }
