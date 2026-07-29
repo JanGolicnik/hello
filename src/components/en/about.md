@@ -1,7 +1,7 @@
 # about %% about
 
 i really really like programming and reading other peoples tech blogs, especially if its about stuff they've made themselves.
-reinventing the wheel and building my [mountain](https://youtu.be/443UNeGrFoM?si=TIkmHb2p5LOP_jYW&t=6948) is also exactly my favorite part about programming.
+reinventing the wheel and building your [mountain](https://youtu.be/443UNeGrFoM?si=TIkmHb2p5LOP_jYW&t=6948) are the best thing every and i think everyone should do it.
 
 member of [fuck off ai music](https://fuckoffaimusic.com/)
 
@@ -9,7 +9,7 @@ right now im running PopOS! and zed with vim bindings. id love to try nix.
 
 ## code
 
-C boy, but i also use Javascript a bunch. otherwise im experienced in C++, C# and Rust from my day job and other projects.
+big C fan but i also use Javascript a bunch. im also experienced in C++, C# and Rust from my day job and other projects.
 
 hope to use Go and Zig in the near future, they seem really cool.
 
