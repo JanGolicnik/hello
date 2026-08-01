@@ -1,6 +1,9 @@
 const canvas = document.querySelector("#flowers");
 const ctx = canvas.getContext("2d");
 
+const setup_orientation_button = document.querySelector("#setup-orientation-btn");
+const aa = document.querySelector("#AA");
+
 let flowers_config = [];
 let leaves_config = [];
 let view = { zoom: 1, s: 1, w: 0, h: 0, l: 0, r: 0, t: 0, b: 0 };
@@ -123,11 +126,34 @@ function catmul_rom(points) {
 
 const wind = { x: 0, v: 0, s: 0 };
 const mouse = { x: null, y: null };
-addEventListener("pointermove", (e) => {
-  if (mouse.x !== null) wind.s += e.clientX - mouse.x;
-  mouse.x = e.clientX;
-  mouse.y = e.clientY;
-});
+const orient = {  };
+async function try_setup_input() {
+  if (DeviceOrientationEvent) {
+    if (DeviceOrientationEvent.requestPermission) {
+      const permission = await DeviceOrientationEvent.requestPermission();
+      if (permission !== "granted") {
+        if (setup_orientation_button.classList.contains("hidden")) {
+          setup_orientation_button.classList.remove("hidden");
+          return;
+        }
+      }
+      setup_orientation_button.classList.add("hidden");
+    }
+
+    window.addEventListener("deviceorientation", (e) => {
+      if (orient.alpha) wind.s += -(e.alpha - orient.alpha) * 10;
+      orient.alpha = e.alpha;
+    aa.innerHTML = `${e.alpha}</br> ${orient.alpha}</br> ${wind.s}`;
+    });
+  }
+
+  addEventListener("pointermove", (e) => {
+    if (mouse.x !== null) wind.s += e.clientX - mouse.x;
+    mouse.x = e.clientX;
+    mouse.y = e.clientY;
+    aa.innerHTML = wind.s;
+  });
+}
 
 function wind_update(dt) {
   wind.v += clamp(wind.s, -60, 60) * 0.0015;
@@ -338,6 +364,7 @@ addEventListener("resize", resize);
 
 document.addEventListener("DOMContentLoaded", async () => {
   try {
+    try_setup_input();
     await load_svgs();
     resize();
     requestAnimationFrame(render);

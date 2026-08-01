@@ -314,6 +314,10 @@ nav > div {
     margin-left: auto;
 }
 
+.hidden {
+    display: none;
+}
+
 @media (max-width: 500px) {
     :root {
         --small: true;
