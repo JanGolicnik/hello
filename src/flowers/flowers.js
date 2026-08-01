@@ -2,7 +2,6 @@ const canvas = document.querySelector("#flowers");
 const ctx = canvas.getContext("2d");
 
 const setup_orientation_button = document.querySelector("#setup-orientation-btn");
-const aa = document.querySelector("#AA");
 
 let flowers_config = [];
 let leaves_config = [];
@@ -143,7 +142,6 @@ async function try_setup_input() {
     window.addEventListener("deviceorientation", (e) => {
       if (orient.alpha) wind.s += -(e.alpha - orient.alpha) * 10;
       orient.alpha = e.alpha;
-    aa.innerHTML = `${e.alpha}</br> ${orient.alpha}</br> ${wind.s}`;
     });
   }
 
@@ -151,7 +149,6 @@ async function try_setup_input() {
     if (mouse.x !== null) wind.s += e.clientX - mouse.x;
     mouse.x = e.clientX;
     mouse.y = e.clientY;
-    aa.innerHTML = wind.s;
   });
 }
 

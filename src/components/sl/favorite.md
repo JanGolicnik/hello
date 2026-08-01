@@ -1,4 +1,4 @@
-## trenutno najljubše %% favorites
+# trenutno najljubše %% favorites
 
 ### mange
 
