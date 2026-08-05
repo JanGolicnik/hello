@@ -350,56 +350,56 @@ nav label, nav input {
         background-color: var(--flower-ground);
         border-top: 5px solid var(--flower-ground-border);
     }
-}
 
-nav {
-    flex-direction: row;
-    flex-wrap: wrap;
-    padding: 0.5rem;
-    gap: .25rem;
-}
+    nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 0.5rem;
+        gap: .25rem;
+    }
 
-nav > div {
-    display: flex;
-    gap: 1rem;
-    flex: 0 0 100%;
-    align-items: center;
-}
+    nav > div {
+        display: flex;
+        gap: 1rem;
+        flex: 0 0 100%;
+        align-items: center;
+    }
 
-nav > div > *:first-child {
-    margin-left: auto;
-}
+    nav > div > *:first-child {
+        margin-left: auto;
+    }
 
-nav label {
-    display: inline-block;
-    cursor: pointer;
-}
+    nav label {
+        display: inline-block;
+        cursor: pointer;
+    }
 
-nav svg {
-    display: inline-block;
-    width: 1.5em;
-    height: 1.5em;
-    min-width: 1.5em;
-    max-width: 1.5em;
-}
+    nav svg {
+        display: inline-block;
+        width: 1.5em;
+        height: 1.5em;
+        min-width: 1.5em;
+        max-width: 1.5em;
+    }
 
-nav > a {
-    flex: 0 1 calc(50% - 1rem);
-    display: none;
-}
+    nav > a {
+        flex: 0 1 calc(50% - 1rem);
+        display: none;
+    }
 
-nav input:checked~a {
-    display: inline-block;
-}
+    nav input:checked~a {
+        display: inline-block;
+    }
 
-nav input {
-    display: none;
-}
+    nav input {
+        display: none;
+    }
 
-nav input:hover {
-    cursor: pointer;
-}
+    nav input:hover {
+        cursor: pointer;
+    }
 
-nav > a#theme {
-    margin-left: 0;
+    nav > a#theme {
+        margin-left: 0;
+    }
 }

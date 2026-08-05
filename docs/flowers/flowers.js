@@ -125,11 +125,14 @@ function catmul_rom(points) {
 
 const wind = { x: 0, v: 0, s: 0 };
 const mouse = { x: null, y: null };
-const orient = {  };
+const orient = {};
 async function try_setup_input() {
   if (DeviceOrientationEvent) {
     if (DeviceOrientationEvent.requestPermission) {
-      const permission = await DeviceOrientationEvent.requestPermission();
+      const permission = "";
+      try {
+        permission = await DeviceOrientationEvent.requestPermission();
+      } catch { }
       if (permission !== "granted") {
         if (setup_orientation_button.classList.contains("hidden")) {
           setup_orientation_button.classList.remove("hidden");
@@ -361,7 +364,7 @@ addEventListener("resize", resize);
 
 document.addEventListener("DOMContentLoaded", async () => {
   try {
-    try_setup_input();
+    await try_setup_input();
     await load_svgs();
     resize();
     requestAnimationFrame(render);
