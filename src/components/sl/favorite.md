@@ -18,8 +18,8 @@
 - [Luzerji](https://open.spotify.com/artist/4LI3oYgU7stmaokd5jw2A0)
 - [Grdi raček](https://open.spotify.com/artist/2hcMhYqKVeEbfYRTGCIsv3)
 
-### povezave
+### igre
 
-- [Varna pravila dizajna](https://anthonyhobday.com/sideprojects/saferules/)
-- [Narejeno da obstane](https://jeffhuang.com/designed_to_last/)
-- [Skoraj sem se utopila](https://longreads.com/2024/04/02/i-nearly-died-drowning-maggie-slepian/)
+- [Neznanec praznine](https://store.steampowered.com/app/2121980/Void_Stranger/)
+- [Ubij princeso](https://store.steampowered.com/app/1989270/Slay_the_Princess__The_Pristine_Cut/)
+- [RPZ združevanje](https://www.reddit.com/r/PlantsVSZombies/comments/1nauphq/hello_how_do_i_download_and_play_pvz_fusion/)
