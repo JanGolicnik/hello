@@ -1,6 +1,6 @@
-# zdravo %% hello
+# %% hello
 
-Zdravo, jaz sem Jan.
+Doberdan! Jaz sem Jan.
 
 Delam igralne in izrisovalne pogone, včasih se pa vmes pojavi kakšna proceduralna roža.
 
@@ -16,8 +16,7 @@ Delam igralne in izrisovalne pogone, včasih se pa vmes pojavi kakšna procedura
   return age;
 </script>, iz Ljubljane, trenutno v Bežigradu.
 
-Razvijalec igralnih pogonov pri Guardiaris-u, šolam se na FRI ljubljana,
-drugače me pa lahko najdete ko odkrivam toplo vodo v C-ju.
+Razvijalec igralnih pogonov pri Guardiaris-u, šolam se na FRI ljubljana, drugače me pa odkrivam toplo vodo v C-ju.
 
 Upravljam tudi z [Blogsoni](https://blogsoni.com).
 

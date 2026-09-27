@@ -1,9 +1,8 @@
 # %% hello
 
-Hi, I'm Jan.
+Hi! I'm Jan!
 
-I do game engines, graphics programming and the occasional procedural flowers.
-
+I do game engines, graphics programming and i really like procudural flowers and C bullshit.
 I'm
 <script &>
   const bd = new Date(2004, 9, 18);
@@ -17,7 +16,7 @@ I'm
   return age;
 </script>, from Ljubljana, Slovenia.
 
-Game engine dev at Guardiaris, studying at FRI, otherwise you can find me reinventing the wheel in C.
+Game engine dev at Guardiaris, studying at FRI.
 
 I also run [Blogsoni](https://blogsoni.com).
 
