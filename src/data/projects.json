@@ -1,5 +1,33 @@
 [
   {
+    "id": "buggin",
+    "name": "buggin",
+    "repo": "https://github.com/JanGolicnik/bugging_around",
+    "favorite": true,
+    "en": {
+      "description": "native mobile autochess style game about bugs fighting each other - in development",
+      "tags": ["c", "webgpu", "ios", "game"]
+    },
+    "sl": {
+      "description": "igra za fone pa komp o hroscih ki se tepejo - še delam",
+      "tags": ["c", "webgpu", "ios", "game"]
+    }
+  },
+  {
+    "id": "flos",
+    "name": "flos",
+    "repo": "https://github.com/JanGolicnik/flos",
+    "favorite": true,
+    "en": {
+      "description": "game about collecting procedural flowers across space - in development",
+      "tags": ["c", "webgpu", "game"]
+    },
+    "sl": {
+      "description": "igra o nabiranju proceduralnih roz - še delam",
+      "tags": ["c", "webgpu", "game"]
+    }
+  },
+  {
     "id": "this",
     "name": "hello",
     "repo": "https://github.com/JanGolicnik/hello",

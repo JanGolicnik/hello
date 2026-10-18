@@ -4,8 +4,10 @@ My main hobbies are programming and reading tech blogs, especially if theyre abo
 
 I'm into [free](https://www.fsf.org/), [independent](https://indieweb.org/) and [simple](https://pointersgonewild.com/2018/02/18/minimalism-in-programming/) software.
 
-Right now I'm working on [flos](https://github.com/JanGolicnik/flos), a game about collecting procedural flowers written in C.
+Right now I'm working on [buggin](https://github.com/JanGolicnik/bugging_around), a mobile game about bugs fighting each other written in C.
 
-Also FREE PALESTINE, FREE SUDAN, FREE CONGO.
+I'm really into live coding.
+
+Also FREE PALESTINE, FREE SUDAN, FREE CUBA.
 
 [fuck off ai music](https://fuckoffaimusic.com/).
